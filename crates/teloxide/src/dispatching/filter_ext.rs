@@ -122,6 +122,8 @@ define_message_ext! {
     (filter_checklist_tasks_done, Message::checklist_tasks_done),
     (filter_checklist_tasks_added, Message::checklist_tasks_added),
     (filter_direct_message_price_changed, Message::direct_message_price_changed),
+    (filter_chat_owner_left, Message::chat_owner_left),
+    (filter_chat_owner_changed, Message::chat_owner_changed),
     (filter_forum_topic_created, Message::forum_topic_created),
     (filter_forum_topic_edited, Message::forum_topic_edited),
     (filter_forum_topic_closed, Message::forum_topic_closed),

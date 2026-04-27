@@ -7,11 +7,12 @@ use url::Url;
 
 use crate::types::{
     Animation, Audio, BareChatId, BusinessConnectionId, Chat, ChatBackground, ChatBoostAdded,
-    ChatId, ChatShared, Checklist, ChecklistTaskId, ChecklistTasksAdded, ChecklistTasksDone,
-    Contact, Dice, DirectMessagePriceChanged, DirectMessagesTopic, Document, ExternalReplyInfo,
-    ForumTopicClosed, ForumTopicCreated, ForumTopicEdited, ForumTopicReopened, Game,
-    GeneralForumTopicHidden, GeneralForumTopicUnhidden, GiftInfo, Giveaway, GiveawayCompleted,
-    GiveawayCreated, GiveawayWinners, InlineKeyboardMarkup, Invoice, LinkPreviewOptions, Location,
+    ChatId, ChatOwnerChanged, ChatOwnerLeft, ChatShared, Checklist, ChecklistTaskId,
+    ChecklistTasksAdded, ChecklistTasksDone, Contact, Dice, DirectMessagePriceChanged,
+    DirectMessagesTopic, Document, ExternalReplyInfo, ForumTopicClosed, ForumTopicCreated,
+    ForumTopicEdited, ForumTopicReopened, Game, GeneralForumTopicHidden,
+    GeneralForumTopicUnhidden, GiftInfo, Giveaway, GiveawayCompleted, GiveawayCreated,
+    GiveawayWinners, InlineKeyboardMarkup, Invoice, LinkPreviewOptions, Location,
     MaybeInaccessibleMessage, MessageAutoDeleteTimerChanged, MessageEntity, MessageEntityRef,
     MessageId, MessageOrigin, PaidMediaInfo, PaidMessagePriceChanged, PassportData, PhotoSize,
     Poll, ProximityAlertTriggered, RefundedPayment, Sticker, Story, SuccessfulPayment,
@@ -117,6 +118,8 @@ pub enum MessageKind {
     ChecklistTasksDone(MessageChecklistTasksDone),
     ChecklistTasksAdded(MessageChecklistTasksAdded),
     DirectMessagePriceChanged(MessageDirectMessagePriceChanged),
+    ChatOwnerLeft(MessageChatOwnerLeft),
+    ChatOwnerChanged(MessageChatOwnerChanged),
     ForumTopicCreated(MessageForumTopicCreated),
     ForumTopicEdited(MessageForumTopicEdited),
     ForumTopicClosed(MessageForumTopicClosed),
@@ -781,6 +784,22 @@ pub struct MessageDirectMessagePriceChanged {
 #[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessageChatOwnerLeft {
+    /// Service message: the owner of the chat has left.
+    pub chat_owner_left: ChatOwnerLeft,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessageChatOwnerChanged {
+    /// Service message: the chat owner has changed.
+    pub chat_owner_changed: ChatOwnerChanged,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
 pub struct MessageWriteAccessAllowed {
     /// Service message: the user allowed the bot added to the attachment menu
     /// to write messages.
@@ -1013,14 +1032,14 @@ mod getters {
     };
 
     use super::{
-        MediaGroupId, MessageChatBackground, MessageChatBoostAdded, MessageForumTopicClosed,
-        MessageForumTopicCreated, MessageForumTopicEdited, MessageForumTopicReopened,
-        MessageGeneralForumTopicHidden, MessageGeneralForumTopicUnhidden, MessageGiftInfo,
-        MessageGiftUpgradeSent, MessageGiveaway, MessageGiveawayCompleted, MessageGiveawayCreated,
-        MessageGiveawayWinners, MessageMessageAutoDeleteTimerChanged,
-        MessagePaidMessagePriceChanged, MessageUniqueGiftInfo, MessageVideoChatEnded,
-        MessageVideoChatScheduled, MessageVideoChatStarted, MessageWebAppData,
-        MessageWriteAccessAllowed,
+        MediaGroupId, MessageChatBackground, MessageChatBoostAdded, MessageChatOwnerChanged,
+        MessageChatOwnerLeft, MessageForumTopicClosed, MessageForumTopicCreated,
+        MessageForumTopicEdited, MessageForumTopicReopened, MessageGeneralForumTopicHidden,
+        MessageGeneralForumTopicUnhidden, MessageGiftInfo, MessageGiftUpgradeSent,
+        MessageGiveaway, MessageGiveawayCompleted, MessageGiveawayCreated, MessageGiveawayWinners,
+        MessageMessageAutoDeleteTimerChanged, MessagePaidMessagePriceChanged,
+        MessageUniqueGiftInfo, MessageVideoChatEnded, MessageVideoChatScheduled,
+        MessageVideoChatStarted, MessageWebAppData, MessageWriteAccessAllowed,
     };
 
     /// Getters for [Message] fields from [telegram docs].
@@ -1811,6 +1830,24 @@ mod getters {
                 DirectMessagePriceChanged(MessageDirectMessagePriceChanged {
                     direct_message_price_changed,
                 }) => Some(direct_message_price_changed),
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn chat_owner_left(&self) -> Option<&types::ChatOwnerLeft> {
+            match &self.kind {
+                ChatOwnerLeft(MessageChatOwnerLeft { chat_owner_left }) => Some(chat_owner_left),
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn chat_owner_changed(&self) -> Option<&types::ChatOwnerChanged> {
+            match &self.kind {
+                ChatOwnerChanged(MessageChatOwnerChanged { chat_owner_changed }) => {
+                    Some(chat_owner_changed)
+                }
                 _ => None,
             }
         }
@@ -3143,6 +3180,7 @@ mod tests {
                     language_code: None,
                     is_premium: false,
                     has_topics_enabled: false,
+                    allows_users_to_create_topics: false,
                     added_to_attachment_menu: false
                 }],
                 additional_chat_count: None,
@@ -3451,6 +3489,50 @@ mod tests {
         assert_eq!(message.unique_gift_info().unwrap().origin, UniqueGiftOrigin::Resale);
         assert_eq!(message.unique_gift_info().unwrap().gift.name, "name");
         assert_eq!(message.unique_gift_info().unwrap().gift.backdrop.rarity_per_mille, 123);
+    }
+
+    #[test]
+    fn chat_owner_left() {
+        let json = r#"{
+            "message_id": 31,
+            "chat": {
+                "id": -1002236736395,
+                "title": "Test",
+                "type": "channel"
+            },
+            "date": 1721162702,
+            "chat_owner_left": {
+                "new_owner": {
+                    "id": 222,
+                    "is_bot": false,
+                    "first_name": "New"
+                }
+            }
+        }"#;
+        let message: Message = from_str(json).unwrap();
+        assert_eq!(message.chat_owner_left().unwrap().new_owner.as_ref().unwrap().id.0, 222);
+    }
+
+    #[test]
+    fn chat_owner_changed() {
+        let json = r#"{
+            "message_id": 32,
+            "chat": {
+                "id": -1002236736395,
+                "title": "Test",
+                "type": "channel"
+            },
+            "date": 1721162702,
+            "chat_owner_changed": {
+                "new_owner": {
+                    "id": 222,
+                    "is_bot": false,
+                    "first_name": "New"
+                }
+            }
+        }"#;
+        let message: Message = from_str(json).unwrap();
+        assert_eq!(message.chat_owner_changed().unwrap().new_owner.id.0, 222);
     }
 
     #[test]

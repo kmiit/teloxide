@@ -1,5 +1,6 @@
 use crate::types::{
-    CallbackGame, CopyTextButton, LoginUrl, SwitchInlineQueryChosenChat, True, WebAppInfo,
+    ButtonStyle, CallbackGame, CopyTextButton, CustomEmojiId, LoginUrl,
+    SwitchInlineQueryChosenChat, True, WebAppInfo,
 };
 use serde::{Deserialize, Serialize};
 
@@ -12,6 +13,12 @@ use serde::{Deserialize, Serialize};
 pub struct InlineKeyboardButton {
     /// Label text on the button.
     pub text: String,
+
+    /// Optional. Identifier of the custom emoji shown on the button.
+    pub icon_custom_emoji_id: Option<CustomEmojiId>,
+
+    /// Optional. Style of the button.
+    pub style: Option<ButtonStyle>,
 
     #[serde(flatten)]
     pub kind: InlineKeyboardButtonKind,
@@ -113,7 +120,7 @@ impl InlineKeyboardButton {
     where
         S: Into<String>,
     {
-        Self { text: text.into(), kind }
+        Self { text: text.into(), icon_custom_emoji_id: None, style: None, kind }
     }
 
     /// Constructor for `InlineKeyboardButton` with [`Url`] kind.
@@ -217,5 +224,22 @@ impl InlineKeyboardButton {
         T: Into<String>,
     {
         Self::new(text, InlineKeyboardButtonKind::Pay(True))
+    }
+}
+
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    #[test]
+    fn serde_icon_and_style() {
+        let json = r#"{"text":"x","callback_data":"cb","icon_custom_emoji_id":"123","style":"primary"}"#;
+        let button: InlineKeyboardButton = serde_json::from_str(json).unwrap();
+        assert_eq!(button.icon_custom_emoji_id, Some("123".into()));
+        assert_eq!(button.style, Some(ButtonStyle::Primary));
+        assert_eq!(
+            serde_json::to_string(&button).unwrap(),
+            r#"{"text":"x","icon_custom_emoji_id":"123","style":"primary","callback_data":"cb"}"#
+        );
     }
 }

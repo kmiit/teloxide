@@ -397,6 +397,24 @@ impl Requester for Bot {
         Self::GetUserProfilePhotos::new(self.clone(), payloads::GetUserProfilePhotos::new(user_id))
     }
 
+    type SetMyProfilePhoto = JsonRequest<payloads::SetMyProfilePhoto>;
+
+    fn set_my_profile_photo(&self, photo: InputProfilePhoto) -> Self::SetMyProfilePhoto {
+        Self::SetMyProfilePhoto::new(self.clone(), payloads::SetMyProfilePhoto::new(photo))
+    }
+
+    type RemoveMyProfilePhoto = JsonRequest<payloads::RemoveMyProfilePhoto>;
+
+    fn remove_my_profile_photo(&self) -> Self::RemoveMyProfilePhoto {
+        Self::RemoveMyProfilePhoto::new(self.clone(), payloads::RemoveMyProfilePhoto::new())
+    }
+
+    type GetUserProfileAudios = JsonRequest<payloads::GetUserProfileAudios>;
+
+    fn get_user_profile_audios(&self, user_id: UserId) -> Self::GetUserProfileAudios {
+        Self::GetUserProfileAudios::new(self.clone(), payloads::GetUserProfileAudios::new(user_id))
+    }
+
     type SetUserEmojiStatus = JsonRequest<payloads::SetUserEmojiStatus>;
 
     fn set_user_emoji_status(&self, user_id: UserId) -> Self::SetUserEmojiStatus {

@@ -254,6 +254,7 @@ mod tests {
                 language_code: Some(String::from("en")),
                 is_premium: false,
                 has_topics_enabled: false,
+                allows_users_to_create_topics: false,
                 added_to_attachment_menu: false,
             },
             kind: TransactionPartnerUserKind::PremiumPurchase(

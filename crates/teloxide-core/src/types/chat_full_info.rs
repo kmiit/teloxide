@@ -3,7 +3,7 @@ use derive_more::derive::From;
 use serde::{Deserialize, Serialize};
 
 use crate::types::{
-    AcceptedGiftTypes, Birthdate, BusinessIntro, BusinessLocation, BusinessOpeningHours, Chat,
+    AcceptedGiftTypes, Audio, Birthdate, BusinessIntro, BusinessLocation, BusinessOpeningHours, Chat,
     ChatId, ChatLocation, ChatPermissions, ChatPhoto, Message, ReactionType, Seconds,
     UniqueGiftColors, User, UserRating,
 };
@@ -106,6 +106,9 @@ pub struct ChatFullInfo {
 
     /// The price of sending paid messages in the chat, in Telegram Stars.
     pub paid_message_star_count: Option<u32>,
+
+    /// The first profile audio of a user.
+    pub first_profile_audio: Option<Audio>,
 
     /// The maximum number of reactions that can be set on a message in the
     /// chat
@@ -767,6 +770,7 @@ mod tests {
             emoji_status_expiration_date: DateTime::from_timestamp(1720708004, 0),
             has_visible_history: false,
             paid_message_star_count: None,
+            first_profile_audio: None,
             max_reaction_count: 0,
         };
         let actual = from_str(
@@ -834,6 +838,19 @@ mod tests {
             emoji_status_expiration_date: DateTime::from_timestamp(1720708004, 0),
             has_visible_history: false,
             paid_message_star_count: None,
+            first_profile_audio: Some(Audio {
+                file: crate::types::FileMeta {
+                    id: "audio-id".into(),
+                    unique_id: "audio-uniq".into(),
+                    size: u32::MAX.into(),
+                },
+                duration: crate::types::Seconds::from_seconds(1),
+                performer: None,
+                title: None,
+                file_name: None,
+                mime_type: None,
+                thumbnail: None,
+            }),
             max_reaction_count: 0,
         };
         eprintln!("{}", to_string(&chat).unwrap());
@@ -845,6 +862,12 @@ mod tests {
                     "type": "private",
                     "username": "username",
                     "first_name": "Anon",
+                    "first_profile_audio": {
+                        "file_id": "audio-id",
+                        "file_unique_id": "audio-uniq",
+                        "duration": 1,
+                        "mime_type": null
+                    },
                     "emoji_status_expiration_date": 1720708004,
                     "max_reaction_count": 0,
                     "accepted_gift_types": {
@@ -899,6 +922,7 @@ mod tests {
             emoji_status_expiration_date: None,
             has_visible_history: false,
             paid_message_star_count: None,
+            first_profile_audio: None,
             max_reaction_count: 0,
         };
 

@@ -63,6 +63,7 @@ fn codegen_payloads() {
                 &*method.names.1,
                 "SendPaidMedia"
                     | "SendMediaGroup"
+                    | "SetMyProfilePhoto"
                     | "SetBusinessAccountProfilePhoto"
                     | "PostStory"
                     | "EditStory"

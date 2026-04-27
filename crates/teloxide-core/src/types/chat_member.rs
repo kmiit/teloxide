@@ -729,6 +729,7 @@ mod tests {
                 language_code: Some("en".to_string()),
                 is_premium: false,
                 has_topics_enabled: false,
+                allows_users_to_create_topics: false,
                 added_to_attachment_menu: false,
             },
             kind: ChatMemberKind::Administrator(Administrator {
@@ -796,6 +797,7 @@ mod tests {
                 language_code: Some("en".to_string()),
                 is_premium: false,
                 has_topics_enabled: false,
+                allows_users_to_create_topics: false,
                 added_to_attachment_menu: false,
             },
             kind: ChatMemberKind::Restricted(Restricted {
