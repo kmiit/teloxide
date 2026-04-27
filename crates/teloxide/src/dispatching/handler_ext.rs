@@ -198,6 +198,7 @@ mod tests {
                 is_paid_post: false,
                 suggested_post_info: None,
                 sender_business_bot: None,
+                sender_tag: None,
                 date,
                 chat: Chat {
                     id: ChatId(109_998_024),

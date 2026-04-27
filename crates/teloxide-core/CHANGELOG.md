@@ -9,7 +9,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Support for TBA 9.4
+- Support for TBA 9.5
   - Add `set_my_profile_photo`, `remove_my_profile_photo`, and `get_user_profile_audios` methods
   - Add `UserProfileAudios`, `VideoQuality`, `ChatOwnerLeft`, and `ChatOwnerChanged` types
   - Add `allows_users_to_create_topics`, `icon_custom_emoji_id`, `style`, `qualities`,

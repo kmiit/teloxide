@@ -610,6 +610,7 @@ mod test {
                     }),
                 },
                 sender_business_bot: None,
+                sender_tag: None,
                 direct_messages_topic: None,
                 kind: MessageKind::Common(MessageCommon {
                     reply_to_message: None,
