@@ -883,6 +883,13 @@ fn test_rust_objects() {
     );
     check_object(
         api_schema.clone(),
+        schema_for!(UserRating),
+        "UserRating".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
         schema_for!(StoryAreaPosition),
         "StoryAreaPosition".to_owned(),
         &mut errors,
@@ -988,6 +995,13 @@ fn test_rust_objects() {
     );
     check_object(
         api_schema.clone(),
+        schema_for!(GiftBackground),
+        "GiftBackground".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
         schema_for!(Gift),
         "Gift".to_owned(),
         &mut errors,
@@ -1025,6 +1039,13 @@ fn test_rust_objects() {
         api_schema.clone(),
         schema_for!(UniqueGiftBackdrop),
         "UniqueGiftBackdrop".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(UniqueGiftColors),
+        "UniqueGiftColors".to_owned(),
         &mut errors,
         &exceptions,
     );

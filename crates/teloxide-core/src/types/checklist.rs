@@ -1,4 +1,4 @@
-use crate::types::{Message, MessageEntity, ParseMode, User};
+use crate::types::{Chat, Message, MessageEntity, ParseMode, User};
 use chrono::{DateTime, Utc};
 use serde::{Deserialize, Serialize};
 
@@ -30,6 +30,10 @@ pub struct ChecklistTask {
 
     /// User that completed the task; omitted if the task wasn't completed
     pub completed_by_user: Option<User>,
+
+    /// Chat that completed the task on behalf of the user; for channel chats
+    /// and channel direct messages chats only.
+    pub completed_by_chat: Option<Chat>,
 
     /// Point in time (Unix timestamp) when the task was completed; 0 if the
     /// task wasn't completed

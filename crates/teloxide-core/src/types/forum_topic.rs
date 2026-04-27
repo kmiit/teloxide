@@ -21,4 +21,9 @@ pub struct ForumTopic {
 
     /// Unique identifier of the custom emoji shown as the topic icon.
     pub icon_custom_emoji_id: Option<CustomEmojiId>,
+
+    /// `true`, if the topic name is hidden and replaced with the default
+    /// "General" one.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_name_implicit: bool,
 }

@@ -133,6 +133,7 @@ pub enum MessageKind {
     SuggestedPostDeclined(MessageSuggestedPostDeclined),
     SuggestedPostPaid(MessageSuggestedPostPaid),
     SuggestedPostRefunded(MessageSuggestedPostRefunded),
+    GiftUpgradeSent(MessageGiftUpgradeSent),
     GiftInfo(MessageGiftInfo),
     UniqueGiftInfo(MessageUniqueGiftInfo),
     VideoChatScheduled(MessageVideoChatScheduled),
@@ -929,6 +930,14 @@ pub struct MessageSuggestedPostRefunded {
 #[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessageGiftUpgradeSent {
+    /// Service message: a gift was upgraded and sent as a unique gift
+    pub gift_upgrade_sent: GiftInfo,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
 pub struct MessageGiftInfo {
     /// Service message: a regular gift was sent or received
     pub gift: GiftInfo,
@@ -1007,10 +1016,11 @@ mod getters {
         MediaGroupId, MessageChatBackground, MessageChatBoostAdded, MessageForumTopicClosed,
         MessageForumTopicCreated, MessageForumTopicEdited, MessageForumTopicReopened,
         MessageGeneralForumTopicHidden, MessageGeneralForumTopicUnhidden, MessageGiftInfo,
-        MessageGiveaway, MessageGiveawayCompleted, MessageGiveawayCreated, MessageGiveawayWinners,
-        MessageMessageAutoDeleteTimerChanged, MessagePaidMessagePriceChanged,
-        MessageUniqueGiftInfo, MessageVideoChatEnded, MessageVideoChatScheduled,
-        MessageVideoChatStarted, MessageWebAppData, MessageWriteAccessAllowed,
+        MessageGiftUpgradeSent, MessageGiveaway, MessageGiveawayCompleted, MessageGiveawayCreated,
+        MessageGiveawayWinners, MessageMessageAutoDeleteTimerChanged,
+        MessagePaidMessagePriceChanged, MessageUniqueGiftInfo, MessageVideoChatEnded,
+        MessageVideoChatScheduled, MessageVideoChatStarted, MessageWebAppData,
+        MessageWriteAccessAllowed,
     };
 
     /// Getters for [Message] fields from [telegram docs].
@@ -1960,6 +1970,16 @@ mod getters {
             match &self.kind {
                 SuggestedPostRefunded(MessageSuggestedPostRefunded { suggested_post_refunded }) => {
                     Some(suggested_post_refunded)
+                }
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn gift_upgrade_sent(&self) -> Option<&types::GiftInfo> {
+            match &self.kind {
+                GiftUpgradeSent(MessageGiftUpgradeSent { gift_upgrade_sent }) => {
+                    Some(gift_upgrade_sent)
                 }
                 _ => None,
             }
@@ -3122,6 +3142,7 @@ mod tests {
                     username: Some("shdwchn10".to_owned()),
                     language_code: None,
                     is_premium: false,
+                    has_topics_enabled: false,
                     added_to_attachment_menu: false
                 }],
                 additional_chat_count: None,
@@ -3376,6 +3397,7 @@ mod tests {
             "date": 1721162577,
             "unique_gift": {
                 "gift": {
+                    "gift_id": "gift",
                     "base_name": "name",
                     "name": "name",
                     "number": 123,

@@ -1,7 +1,7 @@
 use derive_more::From;
 use serde::{Deserialize, Serialize};
 
-use crate::types::{Chat, Sticker};
+use crate::types::{Chat, GiftBackground, Sticker};
 
 /// This object represent a list of gifts.
 ///
@@ -56,6 +56,28 @@ pub struct Gift {
 
     /// Information about the chat that published the gift
     pub publisher_chat: Option<Chat>,
+
+    /// `true`, if the gift is a Telegram Premium subscription.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_premium: bool,
+
+    /// `true`, if the gift has a color gradient.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub has_colors: bool,
+
+    /// Number of times this gift can be purchased by the current user.
+    pub personal_total_count: Option<u32>,
+
+    /// Number of remaining times this gift can be purchased by the current
+    /// user.
+    pub personal_remaining_count: Option<u32>,
+
+    /// Colors of the gift background if the gift has a color gradient.
+    pub background: Option<GiftBackground>,
+
+    /// Number of unique gift variants that can be created by upgrading this
+    /// gift.
+    pub unique_gift_variant_count: Option<u32>,
 }
 
 impl Gift {

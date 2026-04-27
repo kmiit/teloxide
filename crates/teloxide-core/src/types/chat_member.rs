@@ -728,6 +728,7 @@ mod tests {
                 username: Some("fl".to_string()),
                 language_code: Some("en".to_string()),
                 is_premium: false,
+                has_topics_enabled: false,
                 added_to_attachment_menu: false,
             },
             kind: ChatMemberKind::Administrator(Administrator {
@@ -794,6 +795,7 @@ mod tests {
                 username: Some("fl".to_string()),
                 language_code: Some("en".to_string()),
                 is_premium: false,
+                has_topics_enabled: false,
                 added_to_attachment_menu: false,
             },
             kind: ChatMemberKind::Restricted(Restricted {

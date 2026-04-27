@@ -190,6 +190,19 @@ pub trait Requester {
         C: Into<Recipient>,
         T: Into<String>;
 
+    type SendMessageDraft: Request<Payload = SendMessageDraft, Err = Self::Err>;
+
+    /// For Telegram documentation see [`SendMessageDraft`].
+    fn send_message_draft<C, T>(
+        &self,
+        chat_id: C,
+        draft_id: i32,
+        text: T,
+    ) -> Self::SendMessageDraft
+    where
+        C: Into<Recipient>,
+        T: Into<String>;
+
     type ForwardMessage: Request<Payload = ForwardMessage, Err = Self::Err>;
 
     /// For Telegram documentation see [`ForwardMessage`].
@@ -1453,6 +1466,18 @@ pub trait Requester {
         business_connection_id: BusinessConnectionId,
     ) -> Self::GetBusinessAccountGifts;
 
+    type GetUserGifts: Request<Payload = GetUserGifts, Err = Self::Err>;
+
+    /// For Telegram documentation see [`GetUserGifts`].
+    fn get_user_gifts(&self, user_id: UserId) -> Self::GetUserGifts;
+
+    type GetChatGifts: Request<Payload = GetChatGifts, Err = Self::Err>;
+
+    /// For Telegram documentation see [`GetChatGifts`].
+    fn get_chat_gifts<C>(&self, chat_id: C) -> Self::GetChatGifts
+    where
+        C: Into<Recipient>;
+
     type ConvertGiftToStars: Request<Payload = ConvertGiftToStars, Err = Self::Err>;
 
     /// For Telegram documentation see [`ConvertGiftToStars`].
@@ -1511,6 +1536,19 @@ pub trait Requester {
         business_connection_id: BusinessConnectionId,
         story_id: StoryId,
     ) -> Self::DeleteStory;
+
+    type RepostStory: Request<Payload = RepostStory, Err = Self::Err>;
+
+    /// For Telegram documentation see [`RepostStory`].
+    fn repost_story<F>(
+        &self,
+        business_connection_id: BusinessConnectionId,
+        from_chat_id: F,
+        from_story_id: StoryId,
+        active_period: Seconds,
+    ) -> Self::RepostStory
+    where
+        F: Into<ChatId>;
 
     type SendInvoice: Request<Payload = SendInvoice, Err = Self::Err>;
 
@@ -1675,6 +1713,7 @@ macro_rules! forward_all {
             copy_message,
             copy_messages,
             send_message,
+            send_message_draft,
             send_photo,
             send_audio,
             send_document,
@@ -1810,12 +1849,15 @@ macro_rules! forward_all {
             get_business_account_star_balance,
             transfer_business_account_stars,
             get_business_account_gifts,
+            get_user_gifts,
+            get_chat_gifts,
             convert_gift_to_stars,
             upgrade_gift,
             transfer_gift,
             post_story,
             edit_story,
             delete_story,
+            repost_story,
             send_invoice,
             create_invoice_link,
             answer_shipping_query,
