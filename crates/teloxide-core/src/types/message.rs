@@ -81,6 +81,10 @@ pub struct Message {
     /// connected business account.
     pub sender_business_bot: Option<User>,
 
+    /// Tag or custom title of the sender of the message; for supergroups
+    /// only.
+    pub sender_tag: Option<String>,
+
     #[serde(flatten)]
     pub kind: MessageKind,
 }
@@ -1074,6 +1078,11 @@ mod getters {
         #[must_use]
         pub fn sender_chat(&self) -> Option<&Chat> {
             self.sender_chat.as_ref()
+        }
+
+        #[must_use]
+        pub fn sender_tag(&self) -> Option<&str> {
+            self.sender_tag.as_deref()
         }
 
         #[must_use]
@@ -2449,6 +2458,7 @@ mod tests {
                     }),
                 },
                 sender_business_bot: None,
+                sender_tag: None,
                 kind: MessageKind::ChatShared(MessageChatShared {
                     chat_shared: ChatShared {
                         request_id: RequestId(348349),
@@ -3066,6 +3076,7 @@ mod tests {
                     },
                     via_bot: None,
                     sender_business_bot: None,
+                    sender_tag: None,
                     suggested_post_info: None,
                     kind: MessageKind::Giveaway(MessageGiveaway {
                         giveaway: Giveaway {
@@ -3627,5 +3638,27 @@ mod tests {
         }"#;
         let message: Message = from_str(json).unwrap();
         assert!(message.show_caption_above_media())
+    }
+
+    #[test]
+    fn sender_tag() {
+        let json = r#"{
+            "message_id": 141,
+            "from": {
+                "id": 1459074222,
+                "is_bot": false,
+                "first_name": "shadowchain"
+            },
+            "chat": {
+                "id": -100123,
+                "title": "Test",
+                "type": "supergroup"
+            },
+            "date": 1739041615,
+            "text": "tag test",
+            "sender_tag": "Core Team"
+        }"#;
+        let message: Message = from_str(json).unwrap();
+        assert_eq!(message.sender_tag(), Some("Core Team"));
     }
 }

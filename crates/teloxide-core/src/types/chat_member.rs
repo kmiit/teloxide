@@ -119,6 +119,10 @@ pub struct Administrator {
     #[serde(default)]
     pub can_manage_direct_messages: bool,
 
+    /// `true`, if the administrator can manage tags in the chat.
+    #[serde(default)]
+    pub can_manage_tags: bool,
+
     /// `true` if the administrator can add new administrators with a subset of
     /// his own privileges or demote administrators that he has promoted,
     /// directly or indirectly (promoted by administrators that were appointed
@@ -132,6 +136,9 @@ pub struct Administrator {
 #[derive(Clone, Debug, Eq, Hash, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(test, derive(schemars::JsonSchema))]
 pub struct Member {
+    /// Tag of this user.
+    pub tag: Option<String>,
+
     /// Date when the user's subscription will expire
     pub until_date: Option<UntilDate>,
 }
@@ -142,6 +149,9 @@ pub struct Member {
 #[derive(Clone, Debug, Eq, Hash, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(test, derive(schemars::JsonSchema))]
 pub struct Restricted {
+    /// Tag of this user.
+    pub tag: Option<String>,
+
     /// Date when restrictions will be lifted for this user.
     pub until_date: UntilDate,
 
@@ -177,6 +187,9 @@ pub struct Restricted {
     /// `true` if the user is allowed to add web page previews to their
     /// messages.
     pub can_add_web_page_previews: bool,
+
+    /// `true` if the user is allowed to edit their tag.
+    pub can_edit_tag: bool,
 
     /// `true` if the user is allowed to change the chat title, photo
     /// and other settings.
@@ -751,6 +764,7 @@ mod tests {
                 can_promote_members: true,
                 can_manage_direct_messages: true,
                 can_manage_topics: false,
+                can_manage_tags: false,
             }),
         };
         let actual = serde_json::from_str::<ChatMember>(json).unwrap();
@@ -782,6 +796,7 @@ mod tests {
             "can_send_polls": true,
             "can_send_other_messages": true,
             "can_add_web_page_previews": true,
+            "can_edit_tag": true,
             "can_change_info": true,
             "can_invite_users": true,
             "can_pin_messages": true,
@@ -801,6 +816,7 @@ mod tests {
                 added_to_attachment_menu: false,
             },
             kind: ChatMemberKind::Restricted(Restricted {
+                tag: None,
                 is_member: true,
                 can_send_messages: true,
                 can_send_audios: false,
@@ -813,6 +829,7 @@ mod tests {
                 can_send_polls: true,
                 can_send_other_messages: true,
                 can_add_web_page_previews: true,
+                can_edit_tag: true,
                 can_change_info: true,
                 can_invite_users: true,
                 can_pin_messages: true,

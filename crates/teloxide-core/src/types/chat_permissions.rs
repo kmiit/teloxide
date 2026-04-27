@@ -86,6 +86,9 @@ bitflags::bitflags! {
         /// `SEND_MESSAGES`.
         const SEND_VOICE_NOTES = 1 << 13;
 
+        /// Set if the user is allowed to edit their tag.
+        const EDIT_TAG = 1 << 14;
+
         /// Set if the user is allowed to send audios, documents,
         /// photos, videos, video notes and voice notes, implies
         /// `SEND_AUDIOS`, `SEND_DOCUMENTS`, `SEND_PHOTOS`,
@@ -186,6 +189,13 @@ impl ChatPermissions {
         self.contains(ChatPermissions::CHANGE_INFO)
     }
 
+    /// Checks for [`EDIT_TAG`] permission.
+    ///
+    /// [`EDIT_TAG`]: ChatPermissions::EDIT_TAG
+    pub fn can_edit_tag(&self) -> bool {
+        self.contains(ChatPermissions::EDIT_TAG)
+    }
+
     /// Checks for [`INVITE_USERS`] permission.
     ///
     /// [`INVITE_USERS`]: ChatPermissions::INVITE_USERS
@@ -243,6 +253,9 @@ struct ChatPermissionsRaw {
     can_add_web_page_previews: bool,
 
     #[serde(default, skip_serializing_if = "Not::not")]
+    can_edit_tag: bool,
+
+    #[serde(default, skip_serializing_if = "Not::not")]
     can_change_info: bool,
 
     #[serde(default, skip_serializing_if = "Not::not")]
@@ -272,6 +285,7 @@ impl From<ChatPermissions> for ChatPermissionsRaw {
             can_send_polls: this.can_send_polls(),
             can_send_other_messages: this.can_send_other_messages(),
             can_add_web_page_previews: this.can_add_web_page_previews(),
+            can_edit_tag: this.can_edit_tag(),
             can_change_info: this.can_change_info(),
             can_invite_users: this.can_invite_users(),
             can_pin_messages: this.can_pin_messages(),
@@ -293,6 +307,7 @@ impl From<ChatPermissionsRaw> for ChatPermissions {
             can_send_polls,
             can_send_other_messages,
             can_add_web_page_previews,
+            can_edit_tag,
             can_change_info,
             can_invite_users,
             can_pin_messages,
@@ -330,6 +345,9 @@ impl From<ChatPermissionsRaw> for ChatPermissions {
         }
         if can_add_web_page_previews {
             this |= Self::ADD_WEB_PAGE_PREVIEWS;
+        }
+        if can_edit_tag {
+            this |= Self::EDIT_TAG;
         }
         if can_change_info {
             this |= Self::CHANGE_INFO;
@@ -381,5 +399,12 @@ mod tests {
         let after = before - ChatPermissions::SEND_MESSAGES;
         let expected = ChatPermissions::SEND_PHOTOS | ChatPermissions::SEND_AUDIOS;
         assert_eq!(after, expected);
+    }
+
+    #[test]
+    fn can_edit_tag_permission() {
+        let json = r#"{"can_edit_tag":true}"#;
+        let permissions: ChatPermissions = serde_json::from_str(json).unwrap();
+        assert!(permissions.can_edit_tag());
     }
 }

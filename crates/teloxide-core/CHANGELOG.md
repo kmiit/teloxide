@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.5
+  - Add `set_chat_member_tag` method
+  - Add `can_manage_tags` parameter to `promote_chat_member` method
+  - Add `date_time` message entity type
+  - Add `tag`, `can_edit_tag`, `can_manage_tags`, and `sender_tag` fields
+
 - Support for TBA 9.4
   - Add `set_my_profile_photo`, `remove_my_profile_photo`, and `get_user_profile_audios` methods
   - Add `UserProfileAudios`, `VideoQuality`, `ChatOwnerLeft`, and `ChatOwnerChanged` types

@@ -128,6 +128,17 @@ impl MessageEntity {
         Self { kind: MessageEntityKind::CustomEmoji { custom_emoji_id }, offset, length }
     }
 
+    /// Create a message entity representing a formatted unix timestamp.
+    #[must_use]
+    pub const fn date_time(
+        unix_time: i64,
+        date_time_format: Option<String>,
+        offset: usize,
+        length: usize,
+    ) -> Self {
+        Self { kind: MessageEntityKind::DateTime { unix_time, date_time_format }, offset, length }
+    }
+
     #[must_use]
     pub fn kind(mut self, val: MessageEntityKind) -> Self {
         self.kind = val;
@@ -268,6 +279,7 @@ pub enum MessageEntityKind {
     TextLink { url: reqwest::Url },
     TextMention { user: User },
     CustomEmoji { custom_emoji_id: CustomEmojiId },
+    DateTime { unix_time: i64, date_time_format: Option<String> },
 }
 
 #[cfg(test)]
@@ -336,6 +348,26 @@ mod tests {
             },
             from_str::<MessageEntity>(r#"{"type":"pre","offset":1,"length":2,"language":"rust"}"#)
                 .unwrap()
+        );
+    }
+
+    #[test]
+    fn date_time() {
+        use serde_json::from_str;
+
+        assert_eq!(
+            MessageEntity {
+                kind: MessageEntityKind::DateTime {
+                    unix_time: 1_774_062_125,
+                    date_time_format: Some("dd.MM.yyyy".to_string()),
+                },
+                offset: 2,
+                length: 3,
+            },
+            from_str::<MessageEntity>(
+                r#"{"type":"date_time","offset":2,"length":3,"unix_time":1774062125,"date_time_format":"dd.MM.yyyy"}"#
+            )
+            .unwrap()
         );
     }
 
