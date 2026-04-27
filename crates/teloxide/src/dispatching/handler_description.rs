@@ -85,6 +85,7 @@ impl EventKind for Kind {
             ChatJoinRequest,
             ChatBoost,
             RemovedChatBoost,
+            ManagedBot,
         ]
         .into_iter()
         .map(Kind)
@@ -166,6 +167,7 @@ mod tests {
             ChatJoinRequest,
             ChatBoost,
             RemovedChatBoost,
+            ManagedBot,
         ];
 
         for update in allowed_updates_reference {
@@ -190,6 +192,7 @@ mod tests {
                 | ChatJoinRequest
                 | ChatBoost
                 | RemovedChatBoost
+                | ManagedBot
                 | BusinessMessage
                 | BusinessConnection
                 | EditedBusinessMessage

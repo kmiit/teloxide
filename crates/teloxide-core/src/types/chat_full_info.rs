@@ -3,8 +3,8 @@ use derive_more::derive::From;
 use serde::{Deserialize, Serialize};
 
 use crate::types::{
-    AcceptedGiftTypes, Audio, Birthdate, BusinessIntro, BusinessLocation, BusinessOpeningHours, Chat,
-    ChatId, ChatLocation, ChatPermissions, ChatPhoto, Message, ReactionType, Seconds,
+    AcceptedGiftTypes, Audio, Birthdate, BusinessIntro, BusinessLocation, BusinessOpeningHours,
+    Chat, ChatId, ChatLocation, ChatPermissions, ChatPhoto, Message, ReactionType, Seconds,
     UniqueGiftColors, User, UserRating,
 };
 

@@ -3,6 +3,18 @@ Note that the list of required changes is not fully exhaustive and it may lack s
 
 ## unreleased
 
+### TBA 9.6
+
+`correct_option_id` was replaced with `correct_option_ids` in `Poll` and `sendPoll`:
+
+```diff
+-let correct: Option<u8> = poll.correct_option_id;
++let correct: Option<Vec<u8>> = poll.correct_option_ids;
+
+-bot.send_poll(chat_id, "Q?", options).correct_option_id(0).await?;
++bot.send_poll(chat_id, "Q?", options).correct_option_ids(vec![0, 1]).await?;
+```
+
 ### TBA 9.3
 
 `last_resale_star_count` was replaced with `last_resale_currency` and `last_resale_amount` in `UniqueGiftInfo`:

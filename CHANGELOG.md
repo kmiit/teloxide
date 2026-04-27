@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.6
+  - Add `filter_managed_bot` to the `UpdateFilterExt` trait
+  - Add `filter_managed_bot_created`, `filter_poll_option_added`,
+    and `filter_poll_option_deleted` to the `MessageFilterExt` trait
+  - Replace `correct_option_id` with `correct_option_ids` in `Poll` and `sendPoll` [**BC**]
+
 - Support for TBA 9.5
   - Add `filter_sender_tag` to the `MessageFilterExt` trait
 

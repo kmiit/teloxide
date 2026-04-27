@@ -9,4 +9,3 @@ pub enum ButtonStyle {
     Success,
     Primary,
 }
-

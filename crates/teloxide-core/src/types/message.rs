@@ -10,12 +10,12 @@ use crate::types::{
     ChatId, ChatOwnerChanged, ChatOwnerLeft, ChatShared, Checklist, ChecklistTaskId,
     ChecklistTasksAdded, ChecklistTasksDone, Contact, Dice, DirectMessagePriceChanged,
     DirectMessagesTopic, Document, ExternalReplyInfo, ForumTopicClosed, ForumTopicCreated,
-    ForumTopicEdited, ForumTopicReopened, Game, GeneralForumTopicHidden,
-    GeneralForumTopicUnhidden, GiftInfo, Giveaway, GiveawayCompleted, GiveawayCreated,
-    GiveawayWinners, InlineKeyboardMarkup, Invoice, LinkPreviewOptions, Location,
-    MaybeInaccessibleMessage, MessageAutoDeleteTimerChanged, MessageEntity, MessageEntityRef,
-    MessageId, MessageOrigin, PaidMediaInfo, PaidMessagePriceChanged, PassportData, PhotoSize,
-    Poll, ProximityAlertTriggered, RefundedPayment, Sticker, Story, SuccessfulPayment,
+    ForumTopicEdited, ForumTopicReopened, Game, GeneralForumTopicHidden, GeneralForumTopicUnhidden,
+    GiftInfo, Giveaway, GiveawayCompleted, GiveawayCreated, GiveawayWinners, InlineKeyboardMarkup,
+    Invoice, LinkPreviewOptions, Location, ManagedBotCreated, MaybeInaccessibleMessage,
+    MessageAutoDeleteTimerChanged, MessageEntity, MessageEntityRef, MessageId, MessageOrigin,
+    PaidMediaInfo, PaidMessagePriceChanged, PassportData, PhotoSize, Poll, PollOptionAdded,
+    PollOptionDeleted, ProximityAlertTriggered, RefundedPayment, Sticker, Story, SuccessfulPayment,
     SuggestedPostApprovalFailed, SuggestedPostApproved, SuggestedPostDeclined, SuggestedPostInfo,
     SuggestedPostPaid, SuggestedPostRefunded, TextQuote, ThreadId, True, UniqueGiftInfo, User,
     UsersShared, Venue, Video, VideoChatEnded, VideoChatParticipantsInvited, VideoChatScheduled,
@@ -121,6 +121,9 @@ pub enum MessageKind {
     ChatBackground(MessageChatBackground),
     ChecklistTasksDone(MessageChecklistTasksDone),
     ChecklistTasksAdded(MessageChecklistTasksAdded),
+    ManagedBotCreated(MessageManagedBotCreated),
+    PollOptionAdded(MessagePollOptionAdded),
+    PollOptionDeleted(MessagePollOptionDeleted),
     DirectMessagePriceChanged(MessageDirectMessagePriceChanged),
     ChatOwnerLeft(MessageChatOwnerLeft),
     ChatOwnerChanged(MessageChatOwnerChanged),
@@ -207,6 +210,10 @@ pub struct MessageCommon {
 
     /// Identifier of the specific checklist task that is being replied to
     pub reply_to_checklist_task_id: Option<ChecklistTaskId>,
+
+    /// Persistent identifier of the specific poll option that is being replied
+    /// to.
+    pub reply_to_poll_option_id: Option<String>,
 
     /// If the sender of the message boosted the chat, the number of boosts
     /// added by the user
@@ -779,6 +786,30 @@ pub struct MessageChecklistTasksAdded {
 #[serde_with::skip_serializing_none]
 #[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
 #[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessageManagedBotCreated {
+    /// Service message: a new managed bot was created.
+    pub managed_bot_created: ManagedBotCreated,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessagePollOptionAdded {
+    /// Service message: an option was added to a poll.
+    pub poll_option_added: PollOptionAdded,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
+pub struct MessagePollOptionDeleted {
+    /// Service message: an option was deleted from a poll.
+    pub poll_option_deleted: PollOptionDeleted,
+}
+
+#[serde_with::skip_serializing_none]
+#[derive(Clone, Debug, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
 pub struct MessageDirectMessagePriceChanged {
     /// Service message: the price for paid messages in the corresponding direct
     /// messages chat of a channel has changed.
@@ -1039,9 +1070,10 @@ mod getters {
         MediaGroupId, MessageChatBackground, MessageChatBoostAdded, MessageChatOwnerChanged,
         MessageChatOwnerLeft, MessageForumTopicClosed, MessageForumTopicCreated,
         MessageForumTopicEdited, MessageForumTopicReopened, MessageGeneralForumTopicHidden,
-        MessageGeneralForumTopicUnhidden, MessageGiftInfo, MessageGiftUpgradeSent,
-        MessageGiveaway, MessageGiveawayCompleted, MessageGiveawayCreated, MessageGiveawayWinners,
-        MessageMessageAutoDeleteTimerChanged, MessagePaidMessagePriceChanged,
+        MessageGeneralForumTopicUnhidden, MessageGiftInfo, MessageGiftUpgradeSent, MessageGiveaway,
+        MessageGiveawayCompleted, MessageGiveawayCreated, MessageGiveawayWinners,
+        MessageManagedBotCreated, MessageMessageAutoDeleteTimerChanged,
+        MessagePaidMessagePriceChanged, MessagePollOptionAdded, MessagePollOptionDeleted,
         MessageUniqueGiftInfo, MessageVideoChatEnded, MessageVideoChatScheduled,
         MessageVideoChatStarted, MessageWebAppData, MessageWriteAccessAllowed,
     };
@@ -1828,6 +1860,36 @@ mod getters {
             match &self.kind {
                 ChecklistTasksAdded(MessageChecklistTasksAdded { checklist_tasks_added }) => {
                     Some(checklist_tasks_added)
+                }
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn managed_bot_created(&self) -> Option<&types::ManagedBotCreated> {
+            match &self.kind {
+                ManagedBotCreated(MessageManagedBotCreated { managed_bot_created }) => {
+                    Some(managed_bot_created)
+                }
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn poll_option_added(&self) -> Option<&types::PollOptionAdded> {
+            match &self.kind {
+                PollOptionAdded(MessagePollOptionAdded { poll_option_added }) => {
+                    Some(poll_option_added)
+                }
+                _ => None,
+            }
+        }
+
+        #[must_use]
+        pub fn poll_option_deleted(&self) -> Option<&types::PollOptionDeleted> {
+            match &self.kind {
+                PollOptionDeleted(MessagePollOptionDeleted { poll_option_deleted }) => {
+                    Some(poll_option_deleted)
                 }
                 _ => None,
             }
@@ -3192,6 +3254,7 @@ mod tests {
                     is_premium: false,
                     has_topics_enabled: false,
                     allows_users_to_create_topics: false,
+                    can_manage_bots: false,
                     added_to_attachment_menu: false
                 }],
                 additional_chat_count: None,

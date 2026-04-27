@@ -1,18 +1,18 @@
 {
   "version": {
     "major": 9,
-    "minor": 5,
+    "minor": 6,
     "patch": 0
   },
   "recent_changes": {
     "year": 2026,
-    "month": 3,
-    "day": 1
+    "month": 4,
+    "day": 3
   },
   "methods": [
     {
       "name": "getUpdates",
-      "description": "Use this method to receive incoming updates using long polling ([wiki](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api#update) objects.",
+      "description": "Use this method to receive incoming updates using long polling ([wiki](https://en.wikipedia.org/wiki/Push_technology#Long_polling)). Returns an Array of [Update](https://core.telegram.org/bots/api#update) objects.",
       "arguments": [
         {
           "name": "offset",
@@ -70,7 +70,7 @@
     },
     {
       "name": "setWebhook",
-      "description": "Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api#update). In case of an unsuccessful request (a request with response [HTTP status code](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns *True* on success.\n\nIf you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter *secret\\_token*. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.",
+      "description": "Use this method to specify a URL and receive incoming updates via an outgoing webhook. Whenever there is an update for the bot, we will send an HTTPS POST request to the specified URL, containing a JSON-serialized [Update](https://core.telegram.org/bots/api#update). In case of an unsuccessful request (a request with response [HTTP status code](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes) different from `2XY`), we will repeat the request and give up after a reasonable amount of attempts. Returns *True* on success.\n\nIf you'd like to make sure that the webhook was set by you, you can specify secret data in the parameter *secret\\_token*. If specified, the request will contain a header “X-Telegram-Bot-Api-Secret-Token” with the secret token as content.",
       "arguments": [
         {
           "name": "url",
@@ -83,7 +83,7 @@
         },
         {
           "name": "certificate",
-          "description": "Upload your public key certificate so that the root certificate in use can be checked. See our [self-signed guide](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/self-signed) for details.",
+          "description": "Upload your public key certificate so that the root certificate in use can be checked. See our [self-signed guide](https://core.telegram.org/bots/self-signed) for details.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -304,7 +304,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -320,7 +320,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -355,7 +355,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -456,7 +456,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -577,7 +577,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the messages [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -720,7 +720,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -736,7 +736,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -771,7 +771,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -875,7 +875,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the messages [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1025,7 +1025,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1041,7 +1041,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1076,7 +1076,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -1254,7 +1254,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1270,7 +1270,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1305,7 +1305,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -1464,7 +1464,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1480,7 +1480,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1515,7 +1515,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -1744,7 +1744,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1760,7 +1760,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -1795,7 +1795,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -1989,7 +1989,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2005,7 +2005,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2040,7 +2040,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -2182,7 +2182,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2198,7 +2198,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2233,7 +2233,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -2267,7 +2267,7 @@
     },
     {
       "name": "sendVideoNote",
-      "description": "As of [v.4.0](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
+      "description": "As of [v.4.0](https://telegram.org/blog/video-messages-and-telescope), Telegram clients support rounded square MPEG4 videos of up to 1 minute long. Use this method to send video messages. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
       "arguments": [
         {
           "name": "business_connection_id",
@@ -2370,7 +2370,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2386,7 +2386,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2421,7 +2421,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -2574,7 +2574,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2590,7 +2590,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2616,7 +2616,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -2728,7 +2728,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends messages [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends messages [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2744,7 +2744,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2854,7 +2854,7 @@
         },
         {
           "name": "live_period",
-          "description": "Period in seconds during which the location will be updated (see [Live Locations](https://web.archive.org/web/20260302003837/https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.",
+          "description": "Period in seconds during which the location will be updated (see [Live Locations](https://telegram.org/blog/live-locations), should be between 60 and 86400, or 0x7FFFFFFF for live locations that can be edited indefinitely.",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -2881,7 +2881,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2897,7 +2897,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -2932,7 +2932,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -3076,7 +3076,7 @@
         },
         {
           "name": "google_place_type",
-          "description": "Google Places type of the venue. (See [supported types](https://web.archive.org/web/20260302003837/https://developers.google.com/places/web-service/supported_types).)",
+          "description": "Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -3085,7 +3085,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3101,7 +3101,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3136,7 +3136,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -3246,7 +3246,7 @@
         },
         {
           "name": "vcard",
-          "description": "Additional data about the contact in the form of a [vCard](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
+          "description": "Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
           "required": false,
           "type_info": {
             "type": "string",
@@ -3255,7 +3255,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3271,7 +3271,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3306,7 +3306,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -3444,19 +3444,54 @@
         },
         {
           "name": "allows_multiple_answers",
-          "description": "*True*, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to *False*",
+          "description": "Pass *True*, if the poll allows multiple answers, defaults to *False*",
           "required": false,
           "type_info": {
             "type": "bool"
           }
         },
         {
-          "name": "correct_option_id",
-          "description": "0-based identifier of the correct answer option, required for polls in quiz mode",
+          "name": "allows_revoting",
+          "description": "Pass *True*, if the poll allows to change chosen answer options, defaults to *False* for quizzes and to *True* for regular polls",
           "required": false,
           "type_info": {
-            "type": "integer",
-            "enumeration": []
+            "type": "bool"
+          }
+        },
+        {
+          "name": "shuffle_options",
+          "description": "Pass *True*, if the poll options must be shown in random order",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "allow_adding_options",
+          "description": "Pass *True*, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "hide_results_until_closes",
+          "description": "Pass *True*, if poll results must be shown only after the poll closes",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "correct_option_ids",
+          "description": "A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode",
+          "required": false,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "integer",
+              "enumeration": []
+            }
           }
         },
         {
@@ -3493,7 +3528,7 @@
         },
         {
           "name": "open_period",
-          "description": "Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with *close\\_date*.",
+          "description": "Amount of time in seconds the poll will be active after creation, 5-2628000. Can't be used together with *close\\_date*.",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -3502,7 +3537,7 @@
         },
         {
           "name": "close_date",
-          "description": "Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with *open\\_period*.",
+          "description": "Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 2628000 seconds in the future. Can't be used together with *open\\_period*.",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -3518,8 +3553,40 @@
           }
         },
         {
+          "name": "description",
+          "description": "Description of the poll to be sent, 0-1024 characters after entities parsing",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "min_len": 0,
+            "max_len": 1024,
+            "enumeration": []
+          }
+        },
+        {
+          "name": "description_parse_mode",
+          "description": "Mode for parsing entities in the poll description. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "description_entities",
+          "description": "A JSON-serialized list of special entities that appear in the poll description, which can be specified instead of *description\\_parse\\_mode*",
+          "required": false,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "reference",
+              "reference": "MessageEntity"
+            }
+          }
+        },
+        {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3535,7 +3602,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3561,7 +3628,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -3660,7 +3727,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards)",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards)",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -3743,7 +3810,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3759,7 +3826,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -3794,7 +3861,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -3899,7 +3966,7 @@
     },
     {
       "name": "sendChatAction",
-      "description": "Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns *True* on success.\n\nExample: The [ImageBot](https://web.archive.org/web/20260302003837/https://t.me/imagebot) needs some time to process a request and upload the image. Instead of sending a text message along the lines of “Retrieving image, please wait…”, the bot may use [sendChatAction](https://core.telegram.org/bots/api#sendchataction) with *action* = *upload\\_photo*. The user will see a “sending photo” status for the bot.\n\nWe only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.",
+      "description": "Use this method when you need to tell the user that something is happening on the bot's side. The status is set for 5 seconds or less (when a message arrives from your bot, Telegram clients clear its typing status). Returns *True* on success.\n\nExample: The [ImageBot](https://t.me/imagebot) needs some time to process a request and upload the image. Instead of sending a text message along the lines of “Retrieving image, please wait…”, the bot may use [sendChatAction](https://core.telegram.org/bots/api#sendchataction) with *action* = *upload\\_photo*. The user will see a “sending photo” status for the bot.\n\nWe only recommend using this method when a response from the bot will take a **noticeable** amount of time to arrive.",
       "arguments": [
         {
           "name": "business_connection_id",
@@ -4111,7 +4178,7 @@
     },
     {
       "name": "setUserEmojiStatus",
-      "description": "Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method [requestEmojiStatusAccess](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps). Returns *True* on success.",
+      "description": "Changes the emoji status for a given user that previously allowed the bot to manage their emoji status via the Mini App method [requestEmojiStatusAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps). Returns *True* on success.",
       "arguments": [
         {
           "name": "user_id",
@@ -4912,7 +4979,7 @@
     },
     {
       "name": "createChatSubscriptionInviteLink",
-      "description": "Use this method to create a [subscription invite link](https://web.archive.org/web/20260302003837/https://telegram.org/blog/superchannels-star-reactions-subscriptions#star-subscriptions) for a channel chat. The bot must have the *can\\_invite\\_users* administrator rights. The link can be edited using the method [editChatSubscriptionInviteLink](https://core.telegram.org/bots/api#editchatsubscriptioninvitelink) or revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api#revokechatinvitelink). Returns the new invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.",
+      "description": "Use this method to create a [subscription invite link](https://telegram.org/blog/superchannels-star-reactions-subscriptions#star-subscriptions) for a channel chat. The bot must have the *can\\_invite\\_users* administrator rights. The link can be edited using the method [editChatSubscriptionInviteLink](https://core.telegram.org/bots/api#editchatsubscriptioninvitelink) or revoked using the method [revokeChatInviteLink](https://core.telegram.org/bots/api#revokechatinvitelink). Returns the new invite link as a [ChatInviteLink](https://core.telegram.org/bots/api#chatinvitelink) object.",
       "arguments": [
         {
           "name": "chat_id",
@@ -6140,7 +6207,7 @@
     },
     {
       "name": "answerCallbackQuery",
-      "description": "Use this method to send answers to callback queries sent from [inline keyboards](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards). The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, *True* is returned.\n\nAlternatively, the user can be redirected to the specified Game URL. For this option to work, you must first create a game for your bot via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather) and accept the terms. Otherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.",
+      "description": "Use this method to send answers to callback queries sent from [inline keyboards](https://core.telegram.org/bots/features#inline-keyboards). The answer will be displayed to the user as a notification at the top of the chat screen or as an alert. On success, *True* is returned.\n\nAlternatively, the user can be redirected to the specified Game URL. For this option to work, you must first create a game for your bot via [@BotFather](https://t.me/botfather) and accept the terms. Otherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.",
       "arguments": [
         {
           "name": "callback_query_id",
@@ -6173,7 +6240,7 @@
         },
         {
           "name": "url",
-          "description": "URL that will be opened by the user's client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [*callback\\_game*](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.  \n\nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.",
+          "description": "URL that will be opened by the user's client. If you have created a [Game](https://core.telegram.org/bots/api#game) and accepted the conditions via [@BotFather](https://t.me/botfather), specify the URL that opens your game - note that this will only work if the query comes from a [*callback\\_game*](https://core.telegram.org/bots/api#inlinekeyboardbutton) button.  \n\nOtherwise, you may use links like `t.me/your_bot?start=XXXX` that open your bot with a parameter.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -6259,8 +6326,50 @@
       "documentation_link": "https://core.telegram.org/bots/api#getbusinessconnection"
     },
     {
+      "name": "getManagedBotToken",
+      "description": "Use this method to get the token of a managed bot. Returns the token as *String* on success.",
+      "arguments": [
+        {
+          "name": "user_id",
+          "description": "User identifier of the managed bot whose token will be returned",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        }
+      ],
+      "maybe_multipart": false,
+      "return_type": {
+        "type": "string",
+        "enumeration": []
+      },
+      "documentation_link": "https://core.telegram.org/bots/api#getmanagedbottoken"
+    },
+    {
+      "name": "replaceManagedBotToken",
+      "description": "Use this method to revoke the current token of a managed bot and generate a new one. Returns the new token as *String* on success.",
+      "arguments": [
+        {
+          "name": "user_id",
+          "description": "User identifier of the managed bot whose token will be replaced",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        }
+      ],
+      "maybe_multipart": false,
+      "return_type": {
+        "type": "string",
+        "enumeration": []
+      },
+      "documentation_link": "https://core.telegram.org/bots/api#replacemanagedbottoken"
+    },
+    {
       "name": "setMyCommands",
-      "description": "Use this method to change the list of the bot's commands. See [this manual](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#commands) for more details about bot commands. Returns *True* on success.",
+      "description": "Use this method to change the list of the bot's commands. See [this manual](https://core.telegram.org/bots/features#commands) for more details about bot commands. Returns *True* on success.",
       "arguments": [
         {
           "name": "commands",
@@ -6726,7 +6835,7 @@
         },
         {
           "name": "text_parse_mode",
-          "description": "Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.",
+          "description": "Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -6735,7 +6844,7 @@
         },
         {
           "name": "text_entities",
-          "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\_parse\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.",
+          "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\_parse\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -6801,7 +6910,7 @@
         },
         {
           "name": "text_parse_mode",
-          "description": "Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.",
+          "description": "Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -6810,7 +6919,7 @@
         },
         {
           "name": "text_entities",
-          "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\_parse\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, and “custom\\_emoji” are ignored.",
+          "description": "A JSON-serialized list of special entities that appear in the gift text. It can be specified instead of *text\\_parse\\_mode*. Entities other than “bold”, “italic”, “underline”, “strikethrough”, “spoiler”, “custom\\_emoji”, and “date\\_time” are ignored.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -6830,7 +6939,7 @@
     },
     {
       "name": "verifyUser",
-      "description": "Verifies a user [on behalf of the organization](https://web.archive.org/web/20260302003837/https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.",
+      "description": "Verifies a user [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.",
       "arguments": [
         {
           "name": "user_id",
@@ -6862,7 +6971,7 @@
     },
     {
       "name": "verifyChat",
-      "description": "Verifies a chat [on behalf of the organization](https://web.archive.org/web/20260302003837/https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.",
+      "description": "Verifies a chat [on behalf of the organization](https://telegram.org/verify#third-party-verification) which is represented by the bot. Returns *True* on success.",
       "arguments": [
         {
           "name": "chat_id",
@@ -6903,7 +7012,7 @@
     },
     {
       "name": "removeUserVerification",
-      "description": "Removes verification from a user who is currently verified [on behalf of the organization](https://web.archive.org/web/20260302003837/https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.",
+      "description": "Removes verification from a user who is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.",
       "arguments": [
         {
           "name": "user_id",
@@ -6924,7 +7033,7 @@
     },
     {
       "name": "removeChatVerification",
-      "description": "Removes verification from a chat that is currently verified [on behalf of the organization](https://web.archive.org/web/20260302003837/https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.",
+      "description": "Removes verification from a chat that is currently verified [on behalf of the organization](https://telegram.org/verify#third-party-verification) represented by the bot. Returns *True* on success.",
       "arguments": [
         {
           "name": "chat_id",
@@ -7998,6 +8107,128 @@
       "documentation_link": "https://core.telegram.org/bots/api#deletestory"
     },
     {
+      "name": "answerWebAppQuery",
+      "description": "Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api#sentwebappmessage) object is returned.",
+      "arguments": [
+        {
+          "name": "web_app_query_id",
+          "description": "Unique identifier for the query to be answered",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "result",
+          "description": "A JSON-serialized object describing the message to be sent",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "InlineQueryResult"
+          }
+        }
+      ],
+      "maybe_multipart": false,
+      "return_type": {
+        "type": "reference",
+        "reference": "SentWebAppMessage"
+      },
+      "documentation_link": "https://core.telegram.org/bots/api#answerwebappquery"
+    },
+    {
+      "name": "savePreparedInlineMessage",
+      "description": "Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api#preparedinlinemessage) object.",
+      "arguments": [
+        {
+          "name": "user_id",
+          "description": "Unique identifier of the target user that can use the prepared message",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "result",
+          "description": "A JSON-serialized object describing the message to be sent",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "InlineQueryResult"
+          }
+        },
+        {
+          "name": "allow_user_chats",
+          "description": "Pass *True* if the message can be sent to private chats with users",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "allow_bot_chats",
+          "description": "Pass *True* if the message can be sent to private chats with bots",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "allow_group_chats",
+          "description": "Pass *True* if the message can be sent to group and supergroup chats",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "allow_channel_chats",
+          "description": "Pass *True* if the message can be sent to channel chats",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        }
+      ],
+      "maybe_multipart": false,
+      "return_type": {
+        "type": "reference",
+        "reference": "PreparedInlineMessage"
+      },
+      "documentation_link": "https://core.telegram.org/bots/api#savepreparedinlinemessage"
+    },
+    {
+      "name": "savePreparedKeyboardButton",
+      "description": "Stores a keyboard button that can be used by a user within a Mini App. Returns a [PreparedKeyboardButton](https://core.telegram.org/bots/api#preparedkeyboardbutton) object.",
+      "arguments": [
+        {
+          "name": "user_id",
+          "description": "Unique identifier of the target user that can use the button",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "button",
+          "description": "A JSON-serialized object describing the button to be saved. The button must be of the type *request\\_users*, *request\\_chat*, or *request\\_managed\\_bot*",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "KeyboardButton"
+          }
+        }
+      ],
+      "maybe_multipart": false,
+      "return_type": {
+        "type": "reference",
+        "reference": "PreparedKeyboardButton"
+      },
+      "documentation_link": "https://core.telegram.org/bots/api#savepreparedkeyboardbutton"
+    },
+    {
       "name": "editMessageText",
       "description": "Use this method to edit text and [game](https://core.telegram.org/bots/api#games) messages. On success, if the edited message is not an inline message, the edited [Message](https://core.telegram.org/bots/api#message) is returned, otherwise *True* is returned. Note that business messages that were not sent by the bot and do not contain an inline keyboard can only be edited within **48 hours** from the time they were sent.",
       "arguments": [
@@ -8089,7 +8320,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8204,7 +8435,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8288,7 +8519,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8414,7 +8645,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8489,7 +8720,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for a new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8555,7 +8786,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for the new [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) for the message",
+          "description": "A JSON-serialized object for the new [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) for the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8621,7 +8852,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8687,7 +8918,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for a new message [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards).",
+          "description": "A JSON-serialized object for a new message [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -8865,7 +9096,7 @@
     },
     {
       "name": "sendSticker",
-      "description": "Use this method to send static .WEBP, [animated](https://web.archive.org/web/20260302003837/https://telegram.org/blog/animated-stickers) .TGS, or [video](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-stickers-better-reactions) .WEBM stickers. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
+      "description": "Use this method to send static .WEBP, [animated](https://telegram.org/blog/animated-stickers) .TGS, or [video](https://telegram.org/blog/video-stickers-better-reactions) .WEBM stickers. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
       "arguments": [
         {
           "name": "business_connection_id",
@@ -8941,7 +9172,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -8957,7 +9188,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -8992,7 +9223,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
+          "description": "Additional interface options. A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards), [custom reply keyboard](https://core.telegram.org/bots/features#keyboards), instructions to remove a reply keyboard or to force a reply from the user",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -9087,7 +9318,7 @@
         },
         {
           "name": "sticker",
-          "description": "A file with the sticker in .WEBP, .PNG, .TGS, or .WEBM format. See [https://core.telegram.org/stickers](https://web.archive.org/web/20260302003837/https://core.telegram.org/stickers) for technical requirements. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)",
+          "description": "A file with the sticker in .WEBP, .PNG, .TGS, or .WEBM format. See [https://core.telegram.org/stickers](https://core.telegram.org/stickers) for technical requirements. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files)",
           "required": true,
           "type_info": {
             "type": "reference",
@@ -9480,7 +9711,7 @@
         },
         {
           "name": "thumbnail",
-          "description": "A **.WEBP** or **.PNG** image with the thumbnail, must be up to 128 kilobytes in size and have a width and height of exactly 100px, or a **.TGS** animation with a thumbnail up to 32 kilobytes in size (see [https://core.telegram.org/stickers#animation-requirements](https://web.archive.org/web/20260302003837/https://core.telegram.org/stickers#animation-requirements) for animated sticker technical requirements), or a **.WEBM** video with the thumbnail up to 32 kilobytes in size; see [https://core.telegram.org/stickers#video-requirements](https://web.archive.org/web/20260302003837/https://core.telegram.org/stickers#video-requirements) for video sticker technical requirements. Pass a *file\\_id* as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Animated and video sticker set thumbnails can't be uploaded via HTTP URL. If omitted, then the thumbnail is dropped and the first sticker is used as the thumbnail.",
+          "description": "A **.WEBP** or **.PNG** image with the thumbnail, must be up to 128 kilobytes in size and have a width and height of exactly 100px, or a **.TGS** animation with a thumbnail up to 32 kilobytes in size (see [https://core.telegram.org/stickers#animation-requirements](https://core.telegram.org/stickers#animation-requirements) for animated sticker technical requirements), or a **.WEBM** video with the thumbnail up to 32 kilobytes in size; see [https://core.telegram.org/stickers#video-requirements](https://core.telegram.org/stickers#video-requirements) for video sticker technical requirements. Pass a *file\\_id* as a String to send a file that already exists on the Telegram servers, pass an HTTP URL as a String for Telegram to get a file from the Internet, or upload a new one using multipart/form-data. [More information on Sending Files »](https://core.telegram.org/bots/api#sending-files). Animated and video sticker set thumbnails can't be uploaded via HTTP URL. If omitted, then the thumbnail is dropped and the first sticker is used as the thumbnail.",
           "required": false,
           "type_info": {
             "type": "any_of",
@@ -9638,98 +9869,6 @@
       "documentation_link": "https://core.telegram.org/bots/api#answerinlinequery"
     },
     {
-      "name": "answerWebAppQuery",
-      "description": "Use this method to set the result of an interaction with a [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) and send a corresponding message on behalf of the user to the chat from which the query originated. On success, a [SentWebAppMessage](https://core.telegram.org/bots/api#sentwebappmessage) object is returned.",
-      "arguments": [
-        {
-          "name": "web_app_query_id",
-          "description": "Unique identifier for the query to be answered",
-          "required": true,
-          "type_info": {
-            "type": "string",
-            "enumeration": []
-          }
-        },
-        {
-          "name": "result",
-          "description": "A JSON-serialized object describing the message to be sent",
-          "required": true,
-          "type_info": {
-            "type": "reference",
-            "reference": "InlineQueryResult"
-          }
-        }
-      ],
-      "maybe_multipart": false,
-      "return_type": {
-        "type": "reference",
-        "reference": "SentWebAppMessage"
-      },
-      "documentation_link": "https://core.telegram.org/bots/api#answerwebappquery"
-    },
-    {
-      "name": "savePreparedInlineMessage",
-      "description": "Stores a message that can be sent by a user of a Mini App. Returns a [PreparedInlineMessage](https://core.telegram.org/bots/api#preparedinlinemessage) object.",
-      "arguments": [
-        {
-          "name": "user_id",
-          "description": "Unique identifier of the target user that can use the prepared message",
-          "required": true,
-          "type_info": {
-            "type": "integer",
-            "enumeration": []
-          }
-        },
-        {
-          "name": "result",
-          "description": "A JSON-serialized object describing the message to be sent",
-          "required": true,
-          "type_info": {
-            "type": "reference",
-            "reference": "InlineQueryResult"
-          }
-        },
-        {
-          "name": "allow_user_chats",
-          "description": "Pass *True* if the message can be sent to private chats with users",
-          "required": false,
-          "type_info": {
-            "type": "bool"
-          }
-        },
-        {
-          "name": "allow_bot_chats",
-          "description": "Pass *True* if the message can be sent to private chats with bots",
-          "required": false,
-          "type_info": {
-            "type": "bool"
-          }
-        },
-        {
-          "name": "allow_group_chats",
-          "description": "Pass *True* if the message can be sent to group and supergroup chats",
-          "required": false,
-          "type_info": {
-            "type": "bool"
-          }
-        },
-        {
-          "name": "allow_channel_chats",
-          "description": "Pass *True* if the message can be sent to channel chats",
-          "required": false,
-          "type_info": {
-            "type": "bool"
-          }
-        }
-      ],
-      "maybe_multipart": false,
-      "return_type": {
-        "type": "reference",
-        "reference": "PreparedInlineMessage"
-      },
-      "documentation_link": "https://core.telegram.org/bots/api#savepreparedinlinemessage"
-    },
-    {
       "name": "sendInvoice",
       "description": "Use this method to send invoices. On success, the sent [Message](https://core.telegram.org/bots/api#message) is returned.",
       "arguments": [
@@ -9802,7 +9941,7 @@
         },
         {
           "name": "provider_token",
-          "description": "Payment provider token, obtained via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "string",
@@ -9811,7 +9950,7 @@
         },
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "string",
@@ -9820,7 +9959,7 @@
         },
         {
           "name": "prices",
-          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "array",
@@ -9832,7 +9971,7 @@
         },
         {
           "name": "max_tip_amount",
-          "description": "The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -9908,7 +10047,7 @@
         },
         {
           "name": "need_name",
-          "description": "Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9916,7 +10055,7 @@
         },
         {
           "name": "need_phone_number",
-          "description": "Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9924,7 +10063,7 @@
         },
         {
           "name": "need_email",
-          "description": "Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9932,7 +10071,7 @@
         },
         {
           "name": "need_shipping_address",
-          "description": "Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9940,7 +10079,7 @@
         },
         {
           "name": "send_phone_number_to_provider",
-          "description": "Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9948,7 +10087,7 @@
         },
         {
           "name": "send_email_to_provider",
-          "description": "Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9956,7 +10095,7 @@
         },
         {
           "name": "is_flexible",
-          "description": "Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9964,7 +10103,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -9980,7 +10119,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10015,7 +10154,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards). If empty, one 'Pay `total price`' button will be shown. If not empty, the first button must be a Pay button.",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If empty, one 'Pay `total price`' button will be shown. If not empty, the first button must be a Pay button.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -10036,7 +10175,7 @@
       "arguments": [
         {
           "name": "business_connection_id",
-          "description": "Unique identifier of the business connection on behalf of which the link will be created. For payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90) only.",
+          "description": "Unique identifier of the business connection on behalf of which the link will be created. For payments in [Telegram Stars](https://t.me/BotNews/90) only.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -10076,7 +10215,7 @@
         },
         {
           "name": "provider_token",
-          "description": "Payment provider token, obtained via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "string",
@@ -10085,7 +10224,7 @@
         },
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "string",
@@ -10094,7 +10233,7 @@
         },
         {
           "name": "prices",
-          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "array",
@@ -10115,7 +10254,7 @@
         },
         {
           "name": "max_tip_amount",
-          "description": "The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -10182,7 +10321,7 @@
         },
         {
           "name": "need_name",
-          "description": "Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10190,7 +10329,7 @@
         },
         {
           "name": "need_phone_number",
-          "description": "Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10198,7 +10337,7 @@
         },
         {
           "name": "need_email",
-          "description": "Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10206,7 +10345,7 @@
         },
         {
           "name": "need_shipping_address",
-          "description": "Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10214,7 +10353,7 @@
         },
         {
           "name": "send_phone_number_to_provider",
-          "description": "Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10222,7 +10361,7 @@
         },
         {
           "name": "send_email_to_provider",
-          "description": "Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10230,7 +10369,7 @@
         },
         {
           "name": "is_flexible",
-          "description": "Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10378,7 +10517,7 @@
     },
     {
       "name": "refundStarPayment",
-      "description": "Refunds a successful payment in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90). Returns *True* on success.",
+      "description": "Refunds a successful payment in [Telegram Stars](https://t.me/BotNews/90). Returns *True* on success.",
       "arguments": [
         {
           "name": "user_id",
@@ -10510,7 +10649,7 @@
         },
         {
           "name": "game_short_name",
-          "description": "Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather).",
+          "description": "Short name of the game, serves as the unique identifier for the game. Set up your games via [@BotFather](https://t.me/botfather).",
           "required": true,
           "type_info": {
             "type": "string",
@@ -10519,7 +10658,7 @@
         },
         {
           "name": "disable_notification",
-          "description": "Sends the message [silently](https://web.archive.org/web/20260302003837/https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
+          "description": "Sends the message [silently](https://telegram.org/blog/channels-2-0#silent-messages). Users will receive a notification with no sound.",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10535,7 +10674,7 @@
         },
         {
           "name": "allow_paid_broadcast",
-          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
+          "description": "Pass *True* to allow up to 1000 messages per second, ignoring [broadcasting limits](https://core.telegram.org/bots/faq#how-can-i-message-all-of-my-bot-39s-subscribers-at-once) for a fee of 0.1 Telegram Stars per message. The relevant Stars will be withdrawn from the bot's balance",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -10561,7 +10700,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards). If empty, one 'Play game\\_title' button will be shown. If not empty, the first button must launch the game.",
+          "description": "A JSON-serialized object for an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If empty, one 'Play game\\_title' button will be shown. If not empty, the first button must launch the game.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -10826,7 +10965,7 @@
         },
         {
           "name": "chosen_inline_result",
-          "description": "*Optional*. The result of an [inline](https://core.telegram.org/bots/api#inline-mode) query that was chosen by a user and sent to their chat partner. Please see our documentation on the [feedback collecting](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/inline#collecting-feedback) for details on how to enable these updates for your bot.",
+          "description": "*Optional*. The result of an [inline](https://core.telegram.org/bots/api#inline-mode) query that was chosen by a user and sent to their chat partner. Please see our documentation on the [feedback collecting](https://core.telegram.org/bots/inline#collecting-feedback) for details on how to enable these updates for your bot.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -10930,6 +11069,15 @@
           "type_info": {
             "type": "reference",
             "reference": "ChatBoostRemoved"
+          }
+        },
+        {
+          "name": "managed_bot",
+          "description": "*Optional*. A new bot was created to be managed by the bot, or token or owner of a managed bot was changed",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "ManagedBotUpdated"
           }
         }
       ],
@@ -11077,7 +11225,7 @@
         },
         {
           "name": "language_code",
-          "description": "*Optional*. [IETF language tag](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language",
+          "description": "*Optional*. [IETF language tag](https://en.wikipedia.org/wiki/IETF_language_tag) of the user's language",
           "required": false,
           "type_info": {
             "type": "string",
@@ -11112,7 +11260,7 @@
         },
         {
           "name": "can_read_all_group_messages",
-          "description": "*Optional*. *True*, if [privacy mode](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).",
+          "description": "*Optional*. *True*, if [privacy mode](https://core.telegram.org/bots/features#privacy-mode) is disabled for the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -11153,6 +11301,14 @@
         {
           "name": "allows_users_to_create_topics",
           "description": "*Optional*. *True*, if the bot allows users to create and delete topics in private chats. Returned only in [getMe](https://core.telegram.org/bots/api#getme).",
+          "required": false,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "can_manage_bots",
+          "description": "*Optional*. *True*, if other bots can be created to be controlled by the bot. Returned only in [getMe](https://core.telegram.org/bots/api#getme).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -11227,7 +11383,7 @@
         },
         {
           "name": "is_forum",
-          "description": "*Optional*. *True*, if the supergroup chat is a forum (has [topics](https://web.archive.org/web/20260302003837/https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)",
+          "description": "*Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)",
           "required": false,
           "type_info": {
             "type": "bool",
@@ -11312,7 +11468,7 @@
         },
         {
           "name": "is_forum",
-          "description": "*Optional*. *True*, if the supergroup chat is a forum (has [topics](https://web.archive.org/web/20260302003837/https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)",
+          "description": "*Optional*. *True*, if the supergroup chat is a forum (has [topics](https://telegram.org/blog/topics-in-groups-collectible-usernames#topics-in-groups) enabled)",
           "required": false,
           "type_info": {
             "type": "bool",
@@ -11357,7 +11513,7 @@
         },
         {
           "name": "active_usernames",
-          "description": "*Optional*. If non-empty, the list of all [active chat usernames](https://web.archive.org/web/20260302003837/https://telegram.org/blog/topics-in-groups-collectible-usernames#collectible-usernames); for private chats, supergroups and channels",
+          "description": "*Optional*. If non-empty, the list of all [active chat usernames](https://telegram.org/blog/topics-in-groups-collectible-usernames#collectible-usernames); for private chats, supergroups and channels",
           "required": false,
           "type_info": {
             "type": "array",
@@ -11901,6 +12057,15 @@
           }
         },
         {
+          "name": "reply_to_poll_option_id",
+          "description": "*Optional*. Persistent identifier of the specific poll option that is being replied to",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
           "name": "via_bot",
           "description": "*Optional*. Bot through which the message was sent",
           "required": false,
@@ -12097,7 +12262,7 @@
         },
         {
           "name": "video_note",
-          "description": "*Optional*. Message is a [video note](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-messages-and-telescope), information about the video message",
+          "description": "*Optional*. Message is a [video note](https://telegram.org/blog/video-messages-and-telescope), information about the video message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -12421,7 +12586,7 @@
         },
         {
           "name": "connected_website",
-          "description": "*Optional*. The domain name of the website on which the user has logged in. [More about Telegram Login »](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login)",
+          "description": "*Optional*. The domain name of the website on which the user has logged in. [More about Telegram Login »](https://core.telegram.org/widgets/login)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -12430,7 +12595,7 @@
         },
         {
           "name": "write_access_allowed",
-          "description": "*Optional*. Service message: the user allowed the bot to write messages after adding it to the attachment or side menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps)",
+          "description": "*Optional*. Service message: the user allowed the bot to write messages after adding it to the attachment or side menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -12591,12 +12756,39 @@
           }
         },
         {
+          "name": "managed_bot_created",
+          "description": "*Optional*. Service message: user created a bot that will be managed by the current bot",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "ManagedBotCreated"
+          }
+        },
+        {
           "name": "paid_message_price_changed",
           "description": "*Optional*. Service message: the price for paid messages has changed in the chat",
           "required": false,
           "type_info": {
             "type": "reference",
             "reference": "PaidMessagePriceChanged"
+          }
+        },
+        {
+          "name": "poll_option_added",
+          "description": "*Optional*. Service message: answer option was added to a poll",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "PollOptionAdded"
+          }
+        },
+        {
+          "name": "poll_option_deleted",
+          "description": "*Optional*. Service message: answer option was deleted from a poll",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "PollOptionDeleted"
           }
         },
         {
@@ -12691,7 +12883,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message. `login_url` buttons are represented as ordinary `url` buttons.",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message. `login_url` buttons are represented as ordinary `url` buttons.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -12776,7 +12968,7 @@
       "properties": [
         {
           "name": "type",
-          "description": "Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (*italic text*), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://web.archive.org/web/20260302003837/https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time)",
+          "description": "Type of the entity. Currently, can be “mention” (`@username`), “hashtag” (`#hashtag` or `#hashtag@chatusername`), “cashtag” (`$USD` or `$USD@chatusername`), “bot\\_command” (`/start@jobs_bot`), “url” (`https://telegram.org`), “email” (`do-not-reply@telegram.org`), “phone\\_number” (`+1-212-555-0123`), “bold” (**bold text**), “italic” (*italic text*), “underline” (underlined text), “strikethrough” (strikethrough text), “spoiler” (spoiler message), “blockquote” (block quotation), “expandable\\_blockquote” (collapsed-by-default block quotation), “code” (monowidth string), “pre” (monowidth block), “text\\_link” (for clickable text URLs), “text\\_mention” (for users [without usernames](https://telegram.org/blog/edit#new-mentions)), “custom\\_emoji” (for inline custom emoji stickers), or “date\\_time” (for formatted date and time)",
           "required": true,
           "type_info": {
             "type": "string",
@@ -12806,7 +12998,7 @@
         },
         {
           "name": "offset",
-          "description": "Offset in [UTF-16 code units](https://core.telegram.org/web/20260302003837/https://core.telegram.org/api/entities#entity-length) to the start of the entity",
+          "description": "Offset in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length) to the start of the entity",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -12815,7 +13007,7 @@
         },
         {
           "name": "length",
-          "description": "Length of the entity in [UTF-16 code units](https://core.telegram.org/web/20260302003837/https://core.telegram.org/api/entities#entity-length)",
+          "description": "Length of the entity in [UTF-16 code units](https://core.telegram.org/api/entities#entity-length)",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -12895,7 +13087,7 @@
         },
         {
           "name": "entities",
-          "description": "*Optional*. Special entities that appear in the quote. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are kept in quotes.",
+          "description": "*Optional*. Special entities that appear in the quote. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, *custom\\_emoji*, and *date\\_time* entities are kept in quotes.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -13044,7 +13236,7 @@
         },
         {
           "name": "video_note",
-          "description": "*Optional*. Message is a [video note](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-messages-and-telescope), information about the video message",
+          "description": "*Optional*. Message is a [video note](https://telegram.org/blog/video-messages-and-telescope), information about the video message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -13204,7 +13396,7 @@
         },
         {
           "name": "quote",
-          "description": "*Optional*. Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities. The message will fail to send if the quote isn't found in the original message.",
+          "description": "*Optional*. Quoted part of the message to be replied to; 0-1024 characters after entities parsing. The quote must be an exact substring of the message to be replied to, including *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, *custom\\_emoji*, and *date\\_time* entities. The message will fail to send if the quote isn't found in the original message.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -13249,6 +13441,15 @@
           "required": false,
           "type_info": {
             "type": "integer",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "poll_option_id",
+          "description": "*Optional*. Persistent identifier of the specific poll option to be replied to",
+          "required": false,
+          "type_info": {
+            "type": "string",
             "enumeration": []
           }
         }
@@ -13958,7 +14159,7 @@
     },
     {
       "name": "VideoNote",
-      "description": "This object represents a [video message](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-messages-and-telescope) (available in Telegram apps as of [v.4.0](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-messages-and-telescope)).",
+      "description": "This object represents a [video message](https://telegram.org/blog/video-messages-and-telescope) (available in Telegram apps as of [v.4.0](https://telegram.org/blog/video-messages-and-telescope)).",
       "type": "properties",
       "properties": [
         {
@@ -14265,7 +14466,7 @@
         },
         {
           "name": "vcard",
-          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/VCard)",
+          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -14307,6 +14508,15 @@
       "type": "properties",
       "properties": [
         {
+          "name": "persistent_id",
+          "description": "Unique identifier of the option, persistent on option addition and deletion",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
           "name": "text",
           "description": "Option text, 1-100 characters",
           "required": true,
@@ -14331,8 +14541,35 @@
         },
         {
           "name": "voter_count",
-          "description": "Number of users that voted for this option",
+          "description": "Number of users who voted for this option; may be 0 if unknown",
           "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "added_by_user",
+          "description": "*Optional*. User who added the option; omitted if the option wasn't added by a user after poll creation",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "User"
+          }
+        },
+        {
+          "name": "added_by_chat",
+          "description": "*Optional*. Chat that added the option; omitted if the option wasn't added by a chat after poll creation",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "Chat"
+          }
+        },
+        {
+          "name": "addition_date",
+          "description": "*Optional*. Point in time (Unix timestamp) when the option was added; omitted if the option existed in the original poll",
+          "required": false,
           "type_info": {
             "type": "integer",
             "enumeration": []
@@ -14421,6 +14658,18 @@
             "type": "array",
             "array": {
               "type": "integer",
+              "enumeration": []
+            }
+          }
+        },
+        {
+          "name": "option_persistent_ids",
+          "description": "Persistent identifiers of the chosen answer options. May be empty if the vote was retracted.",
+          "required": true,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "string",
               "enumeration": []
             }
           }
@@ -14523,12 +14772,23 @@
           }
         },
         {
-          "name": "correct_option_id",
-          "description": "*Optional*. 0-based identifier of the correct answer option. Available only for polls in the quiz mode, which are closed, or was sent (not forwarded) by the bot or to the private chat with the bot.",
+          "name": "allows_revoting",
+          "description": "*True*, if the poll allows to change the chosen answer options",
+          "required": true,
+          "type_info": {
+            "type": "bool"
+          }
+        },
+        {
+          "name": "correct_option_ids",
+          "description": "*Optional*. Array of 0-based identifiers of the correct answer options. Available only for polls in quiz mode which are closed or were sent (not forwarded) by the bot or to the private chat with the bot.",
           "required": false,
           "type_info": {
-            "type": "integer",
-            "enumeration": []
+            "type": "array",
+            "array": {
+              "type": "integer",
+              "enumeration": []
+            }
           }
         },
         {
@@ -14570,6 +14830,27 @@
           "type_info": {
             "type": "integer",
             "enumeration": []
+          }
+        },
+        {
+          "name": "description",
+          "description": "*Optional*. Description of the poll; for polls inside the [Message](https://core.telegram.org/bots/api#message) object only",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "description_entities",
+          "description": "*Optional*. Special entities like usernames, URLs, bot commands, etc. that appear in the description",
+          "required": false,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "reference",
+              "reference": "MessageEntity"
+            }
           }
         }
       ],
@@ -14726,7 +15007,7 @@
         },
         {
           "name": "parse_mode",
-          "description": "*Optional*. Mode for parsing entities in the text. See [formatting options](https://web.archive.org/web/20260302003837/https://core.telegram.org/bots/api#formatting-options) for more details.",
+          "description": "*Optional*. Mode for parsing entities in the text. See [formatting options](https://core.telegram.org/bots/api#formatting-options) for more details.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -14735,7 +15016,7 @@
         },
         {
           "name": "text_entities",
-          "description": "*Optional*. List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are allowed.",
+          "description": "*Optional*. List of special entities that appear in the text, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, *custom\\_emoji*, and *date\\_time* entities are allowed.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -14775,7 +15056,7 @@
         },
         {
           "name": "title_entities",
-          "description": "*Optional*. List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, and *custom\\_emoji* entities are allowed.",
+          "description": "*Optional*. List of special entities that appear in the title, which can be specified instead of parse\\_mode. Currently, only *bold*, *italic*, *underline*, *strikethrough*, *spoiler*, *custom\\_emoji*, and *date\\_time* entities are allowed.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -15006,7 +15287,7 @@
         },
         {
           "name": "google_place_type",
-          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://web.archive.org/web/20260302003837/https://developers.google.com/places/web-service/supported_types).)",
+          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -15018,7 +15299,7 @@
     },
     {
       "name": "WebAppData",
-      "description": "Describes data sent from a [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) to the bot.",
+      "description": "Describes data sent from a [Web App](https://core.telegram.org/bots/webapps) to the bot.",
       "type": "properties",
       "properties": [
         {
@@ -15093,6 +15374,143 @@
         }
       ],
       "documentation_link": "https://core.telegram.org/bots/api#messageautodeletetimerchanged"
+    },
+    {
+      "name": "ManagedBotCreated",
+      "description": "This object contains information about the bot that was created to be managed by the current bot.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "bot",
+          "description": "Information about the bot. The bot's token can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken).",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "User"
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#managedbotcreated"
+    },
+    {
+      "name": "ManagedBotUpdated",
+      "description": "This object contains information about the creation, token update, or owner update of a bot that is managed by the current bot.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "user",
+          "description": "User that created the bot",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "User"
+          }
+        },
+        {
+          "name": "bot",
+          "description": "Information about the bot. Token of the bot can be fetched using the method [getManagedBotToken](https://core.telegram.org/bots/api#getmanagedbottoken).",
+          "required": true,
+          "type_info": {
+            "type": "reference",
+            "reference": "User"
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#managedbotupdated"
+    },
+    {
+      "name": "PollOptionAdded",
+      "description": "Describes a service message about an option added to a poll.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "poll_message",
+          "description": "*Optional*. Message containing the poll to which the option was added, if known. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the *reply\\_to\\_message* field even if it itself is a reply.",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "MaybeInaccessibleMessage"
+          }
+        },
+        {
+          "name": "option_persistent_id",
+          "description": "Unique identifier of the added option",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "option_text",
+          "description": "Option text",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "option_text_entities",
+          "description": "*Optional*. Special entities that appear in the *option\\_text*",
+          "required": false,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "reference",
+              "reference": "MessageEntity"
+            }
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#polloptionadded"
+    },
+    {
+      "name": "PollOptionDeleted",
+      "description": "Describes a service message about an option deleted from a poll.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "poll_message",
+          "description": "*Optional*. Message containing the poll from which the option was deleted, if known. Note that the [Message](https://core.telegram.org/bots/api#message) object in this field will not contain the *reply\\_to\\_message* field even if it itself is a reply.",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "MaybeInaccessibleMessage"
+          }
+        },
+        {
+          "name": "option_persistent_id",
+          "description": "Unique identifier of the deleted option",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "option_text",
+          "description": "Option text",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "option_text_entities",
+          "description": "*Optional*. Special entities that appear in the *option\\_text*",
+          "required": false,
+          "type_info": {
+            "type": "array",
+            "array": {
+              "type": "reference",
+              "reference": "MessageEntity"
+            }
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#polloptiondeleted"
     },
     {
       "name": "ChatBoostAdded",
@@ -15691,12 +16109,12 @@
     },
     {
       "name": "WriteAccessAllowed",
-      "description": "This object represents a service message about a user allowing a bot to write messages after adding it to the attachment menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps).",
+      "description": "This object represents a service message about a user allowing a bot to write messages after adding it to the attachment menu, launching a Web App from a link, or accepting an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps).",
       "type": "properties",
       "properties": [
         {
           "name": "from_request",
-          "description": "*Optional*. *True*, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps)",
+          "description": "*Optional*. *True*, if the access was granted after the user accepted an explicit request from a Web App sent by the method [requestWriteAccess](https://core.telegram.org/bots/webapps#initializing-mini-apps)",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -16069,7 +16487,7 @@
         },
         {
           "name": "country_codes",
-          "description": "*Optional*. A list of two-letter [ISO 3166-1 alpha-2](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which eligible users for the giveaway must come. If empty, then all users can participate in the giveaway. Users with a phone number that was bought on Fragment can always participate in giveaways.",
+          "description": "*Optional*. A list of two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country codes indicating the countries from which eligible users for the giveaway must come. If empty, then all users can participate in the giveaway. Users with a phone number that was bought on Fragment can always participate in giveaways.",
           "required": false,
           "type_info": {
             "type": "array",
@@ -16539,12 +16957,12 @@
     },
     {
       "name": "WebAppInfo",
-      "description": "Describes a [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps).",
+      "description": "Describes a [Web App](https://core.telegram.org/bots/webapps).",
       "type": "properties",
       "properties": [
         {
           "name": "url",
-          "description": "An HTTPS URL of a Web App to be opened with additional data as specified in [Initializing Web Apps](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps)",
+          "description": "An HTTPS URL of a Web App to be opened with additional data as specified in [Initializing Web Apps](https://core.telegram.org/bots/webapps#initializing-mini-apps)",
           "required": true,
           "type_info": {
             "type": "string",
@@ -16556,7 +16974,7 @@
     },
     {
       "name": "ReplyKeyboardMarkup",
-      "description": "This object represents a [custom keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#keyboards) for details and examples). Not supported in channels and for messages sent on behalf of a Telegram Business account.",
+      "description": "This object represents a [custom keyboard](https://core.telegram.org/bots/features#keyboards) with reply options (see [Introduction to bots](https://core.telegram.org/bots/features#keyboards) for details and examples). Not supported in channels and for messages sent on behalf of a Telegram Business account.",
       "type": "properties",
       "properties": [
         {
@@ -16639,7 +17057,7 @@
         },
         {
           "name": "icon_custom_emoji_id",
-          "description": "*Optional*. Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://web.archive.org/web/20260302003837/https://fragment.com/) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.",
+          "description": "*Optional*. Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://fragment.com) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -16678,6 +17096,15 @@
           }
         },
         {
+          "name": "request_managed_bot",
+          "description": "*Optional*. If specified, pressing the button will ask the user to create and share a bot that will be managed by the current bot. Available for bots that enabled management of other bots in the [@BotFather](https://t.me/BotFather) Mini App. Available in private chats only.",
+          "required": false,
+          "type_info": {
+            "type": "reference",
+            "reference": "KeyboardButtonRequestManagedBot"
+          }
+        },
+        {
           "name": "request_contact",
           "description": "*Optional*. If *True*, the user's phone number will be sent as a contact when the button is pressed. Available in private chats only.",
           "required": false,
@@ -16704,7 +17131,7 @@
         },
         {
           "name": "web_app",
-          "description": "*Optional*. If specified, the described [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) will be launched when the button is pressed. The Web App will be able to send a “web\\_app\\_data” service message. Available in private chats only.",
+          "description": "*Optional*. If specified, the described [Web App](https://core.telegram.org/bots/webapps) will be launched when the button is pressed. The Web App will be able to send a “web\\_app\\_data” service message. Available in private chats only.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -16716,7 +17143,7 @@
     },
     {
       "name": "KeyboardButtonRequestUsers",
-      "description": "This object defines the criteria used to request suitable users. Information about the selected users will be shared with the bot when the corresponding button is pressed. [More about requesting users »](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#chat-and-user-selection)",
+      "description": "This object defines the criteria used to request suitable users. Information about the selected users will be shared with the bot when the corresponding button is pressed. [More about requesting users »](https://core.telegram.org/bots/features#chat-and-user-selection)",
       "type": "properties",
       "properties": [
         {
@@ -16783,7 +17210,7 @@
     },
     {
       "name": "KeyboardButtonRequestChat",
-      "description": "This object defines the criteria used to request a suitable chat. Information about the selected chat will be shared with the bot when the corresponding button is pressed. The bot will be granted requested rights in the chat if appropriate. [More about requesting chats »](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#chat-and-user-selection).",
+      "description": "This object defines the criteria used to request a suitable chat. Information about the selected chat will be shared with the bot when the corresponding button is pressed. The bot will be granted requested rights in the chat if appropriate. [More about requesting chats »](https://core.telegram.org/bots/features#chat-and-user-selection).",
       "type": "properties",
       "properties": [
         {
@@ -16881,6 +17308,41 @@
       "documentation_link": "https://core.telegram.org/bots/api#keyboardbuttonrequestchat"
     },
     {
+      "name": "KeyboardButtonRequestManagedBot",
+      "description": "This object defines the parameters for the creation of a managed bot. Information about the created bot will be shared with the bot using the update *managed\\_bot* and a [Message](https://core.telegram.org/bots/api#message) with the field *managed\\_bot\\_created*.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "request_id",
+          "description": "Signed 32-bit identifier of the request. Must be unique within the message",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "suggested_name",
+          "description": "*Optional*. Suggested name for the bot",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "suggested_username",
+          "description": "*Optional*. Suggested username for the bot",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#keyboardbuttonrequestmanagedbot"
+    },
+    {
       "name": "KeyboardButtonPollType",
       "description": "This object represents type of a poll, which is allowed to be created and sent when the corresponding button is pressed.",
       "type": "properties",
@@ -16924,7 +17386,7 @@
     },
     {
       "name": "InlineKeyboardMarkup",
-      "description": "This object represents an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) that appears right next to the message it belongs to.",
+      "description": "This object represents an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) that appears right next to the message it belongs to.",
       "type": "properties",
       "properties": [
         {
@@ -16961,7 +17423,7 @@
         },
         {
           "name": "icon_custom_emoji_id",
-          "description": "*Optional*. Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://web.archive.org/web/20260302003837/https://fragment.com/) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.",
+          "description": "*Optional*. Unique identifier of the custom emoji shown before the text of the button. Can only be used by bots that purchased additional usernames on [Fragment](https://fragment.com) or in the messages directly sent by the bot to private, group and supergroup chats if the owner of the bot has a Telegram Premium subscription.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -17001,7 +17463,7 @@
         },
         {
           "name": "web_app",
-          "description": "*Optional*. Description of the [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a Telegram Business account.",
+          "description": "*Optional*. Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to send an arbitrary message on behalf of the user using the method [answerWebAppQuery](https://core.telegram.org/bots/api#answerwebappquery). Available only in private chats between a user and the bot. Not supported for messages sent on behalf of a Telegram Business account.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -17010,7 +17472,7 @@
         },
         {
           "name": "login_url",
-          "description": "*Optional*. An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login).",
+          "description": "*Optional*. An HTTPS URL used to automatically authorize the user. Can be used as a replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login).",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -17075,12 +17537,12 @@
     },
     {
       "name": "LoginUrl",
-      "description": "This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:\n\nTelegram apps support these buttons as of [version 5.7](https://web.archive.org/web/20260302003837/https://telegram.org/blog/privacy-discussions-web-bots#meet-seamless-web-bots).\n\nSample bot: [@discussbot](https://web.archive.org/web/20260302003837/https://t.me/discussbot)",
+      "description": "This object represents a parameter of the inline keyboard button used to automatically authorize a user. Serves as a great replacement for the [Telegram Login Widget](https://core.telegram.org/widgets/login) when the user is coming from Telegram. All the user needs to do is tap/click a button and confirm that they want to log in:\n\nTelegram apps support these buttons as of [version 5.7](https://telegram.org/blog/privacy-discussions-web-bots#meet-seamless-web-bots).\n\nSample bot: [@discussbot](https://t.me/discussbot)",
       "type": "properties",
       "properties": [
         {
           "name": "url",
-          "description": "An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login#receiving-authorization-data).  \n\n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login#checking-authorization).",
+          "description": "An HTTPS URL to be opened with user authorization data added to the query string when the button is pressed. If the user refuses to provide authorization data, the original URL without information about the user will be opened. The data added is the same as described in [Receiving authorization data](https://core.telegram.org/widgets/login#receiving-authorization-data).  \n\n**NOTE:** You **must** always check the hash of the received data to verify the authentication and the integrity of the data as described in [Checking authorization](https://core.telegram.org/widgets/login#checking-authorization).",
           "required": true,
           "type_info": {
             "type": "string",
@@ -17098,7 +17560,7 @@
         },
         {
           "name": "bot_username",
-          "description": "*Optional*. Username of a bot, which will be used for user authorization. See [Setting up a bot](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot's username will be assumed. The *url*'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/web/20260302003837/https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.",
+          "description": "*Optional*. Username of a bot, which will be used for user authorization. See [Setting up a bot](https://core.telegram.org/widgets/login#setting-up-a-bot) for more details. If not specified, the current bot's username will be assumed. The *url*'s domain must be the same as the domain linked with the bot. See [Linking your domain to the bot](https://core.telegram.org/widgets/login#linking-your-domain-to-the-bot) for more details.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -17186,7 +17648,7 @@
     },
     {
       "name": "CallbackQuery",
-      "description": "This object represents an incoming callback query from a callback button in an [inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards). If the button that originated the query was attached to a message sent by the bot, the field *message* will be present. If the button was attached to a message sent via the bot (in [inline mode](https://core.telegram.org/bots/api#inline-mode)), the field *inline\\_message\\_id* will be present. Exactly one of the fields *data* or *game\\_short\\_name* will be present.",
+      "description": "This object represents an incoming callback query from a callback button in an [inline keyboard](https://core.telegram.org/bots/features#inline-keyboards). If the button that originated the query was attached to a message sent by the bot, the field *message* will be present. If the button was attached to a message sent via the bot (in [inline mode](https://core.telegram.org/bots/api#inline-mode)), the field *inline\\_message\\_id* will be present. Exactly one of the fields *data* or *game\\_short\\_name* will be present.",
       "type": "properties",
       "properties": [
         {
@@ -17257,7 +17719,7 @@
     },
     {
       "name": "ForceReply",
-      "description": "Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot's message and tapped 'Reply'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.",
+      "description": "Upon receiving a message with this object, Telegram clients will display a reply interface to the user (act as if the user has selected the bot's message and tapped 'Reply'). This can be extremely useful if you want to create user-friendly step-by-step interfaces without having to sacrifice [privacy mode](https://core.telegram.org/bots/features#privacy-mode). Not supported in channels and for messages sent on behalf of a Telegram Business account.",
       "type": "properties",
       "properties": [
         {
@@ -20737,7 +21199,7 @@
     },
     {
       "name": "MenuButtonWebApp",
-      "description": "Represents a menu button, which launches a [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps).",
+      "description": "Represents a menu button, which launches a [Web App](https://core.telegram.org/bots/webapps).",
       "type": "properties",
       "properties": [
         {
@@ -21317,6 +21779,66 @@
         }
       ],
       "documentation_link": "https://core.telegram.org/bots/api#businessmessagesdeleted"
+    },
+    {
+      "name": "SentWebAppMessage",
+      "description": "Describes an inline message sent by a [Web App](https://core.telegram.org/bots/webapps) on behalf of a user.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "inline_message_id",
+          "description": "*Optional*. Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.",
+          "required": false,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#sentwebappmessage"
+    },
+    {
+      "name": "PreparedInlineMessage",
+      "description": "Describes an inline message to be sent by a user of a Mini App.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "id",
+          "description": "Unique identifier of the prepared message",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        },
+        {
+          "name": "expiration_date",
+          "description": "Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used",
+          "required": true,
+          "type_info": {
+            "type": "integer",
+            "enumeration": []
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#preparedinlinemessage"
+    },
+    {
+      "name": "PreparedKeyboardButton",
+      "description": "Describes a keyboard button to be used by a user of a Mini App.",
+      "type": "properties",
+      "properties": [
+        {
+          "name": "id",
+          "description": "Unique identifier of the keyboard button",
+          "required": true,
+          "type_info": {
+            "type": "string",
+            "enumeration": []
+          }
+        }
+      ],
+      "documentation_link": "https://core.telegram.org/bots/api#preparedkeyboardbutton"
     },
     {
       "name": "ResponseParameters",
@@ -22232,7 +22754,7 @@
         },
         {
           "name": "is_animated",
-          "description": "*True*, if the sticker is [animated](https://web.archive.org/web/20260302003837/https://telegram.org/blog/animated-stickers)",
+          "description": "*True*, if the sticker is [animated](https://telegram.org/blog/animated-stickers)",
           "required": true,
           "type_info": {
             "type": "bool"
@@ -22240,7 +22762,7 @@
         },
         {
           "name": "is_video",
-          "description": "*True*, if the sticker is a [video sticker](https://web.archive.org/web/20260302003837/https://telegram.org/blog/video-stickers-better-reactions)",
+          "description": "*True*, if the sticker is a [video sticker](https://telegram.org/blog/video-stickers-better-reactions)",
           "required": true,
           "type_info": {
             "type": "bool"
@@ -22574,7 +23096,7 @@
         },
         {
           "name": "web_app",
-          "description": "*Optional*. Description of the [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to switch back to the inline mode using the method [switchInlineQuery](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps#initializing-mini-apps) inside the Web App.",
+          "description": "*Optional*. Description of the [Web App](https://core.telegram.org/bots/webapps) that will be launched when the user presses the button. The Web App will be able to switch back to the inline mode using the method [switchInlineQuery](https://core.telegram.org/bots/webapps#initializing-mini-apps) inside the Web App.",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -22583,7 +23105,7 @@
         },
         {
           "name": "start_parameter",
-          "description": "*Optional*. [Deep-linking](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.  \n\n*Example:* An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a 'Connect your YouTube account' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [*switch\\_inline*](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities.",
+          "description": "*Optional*. [Deep-linking](https://core.telegram.org/bots/features#deep-linking) parameter for the /start message sent to the bot when a user presses the button. 1-64 characters, only `A-Z`, `a-z`, `0-9`, `_` and `-` are allowed.  \n\n*Example:* An inline bot that sends YouTube videos can ask the user to connect the bot to their YouTube account to adapt search results accordingly. To do this, it displays a 'Connect your YouTube account' button above the results, or even before showing any. The user presses the button, switches to a private chat with the bot and, in doing so, passes a start parameter that instructs the bot to return an OAuth link. Once done, the bot can offer a [*switch\\_inline*](https://core.telegram.org/bots/api#inlinekeyboardmarkup) button so that the user can easily return to the chat where they wanted to use the bot's inline capabilities.",
           "required": false,
           "type_info": {
             "type": "string",
@@ -22727,7 +23249,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -22902,7 +23424,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23055,7 +23577,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23208,7 +23730,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23368,7 +23890,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23481,7 +24003,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23585,7 +24107,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23701,7 +24223,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23833,7 +24355,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -23966,7 +24488,7 @@
         },
         {
           "name": "google_place_type",
-          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://web.archive.org/web/20260302003837/https://developers.google.com/places/web-service/supported_types).)",
+          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -23975,7 +24497,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24074,7 +24596,7 @@
         },
         {
           "name": "vcard",
-          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
+          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
           "required": false,
           "type_info": {
             "type": "string",
@@ -24083,7 +24605,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24164,7 +24686,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24267,7 +24789,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24370,7 +24892,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24473,7 +24995,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24527,7 +25049,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24631,7 +25153,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24743,7 +25265,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24838,7 +25360,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -24924,7 +25446,7 @@
         },
         {
           "name": "reply_markup",
-          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
+          "description": "*Optional*. [Inline keyboard](https://core.telegram.org/bots/features#inline-keyboards) attached to the message",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -25147,7 +25669,7 @@
         },
         {
           "name": "google_place_type",
-          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://web.archive.org/web/20260302003837/https://developers.google.com/places/web-service/supported_types).)",
+          "description": "*Optional*. Google Places type of the venue. (See [supported types](https://developers.google.com/places/web-service/supported_types).)",
           "required": false,
           "type_info": {
             "type": "string",
@@ -25191,7 +25713,7 @@
         },
         {
           "name": "vcard",
-          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
+          "description": "*Optional*. Additional data about the contact in the form of a [vCard](https://en.wikipedia.org/wiki/VCard), 0-2048 bytes",
           "required": false,
           "type_info": {
             "type": "string",
@@ -25239,7 +25761,7 @@
         },
         {
           "name": "provider_token",
-          "description": "*Optional*. Payment provider token, obtained via [@BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Payment provider token, obtained via [@BotFather](https://t.me/botfather). Pass an empty string for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "string",
@@ -25248,7 +25770,7 @@
         },
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Three-letter ISO 4217 currency code, see [more on currencies](https://core.telegram.org/bots/payments#supported-currencies). Pass “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25257,7 +25779,7 @@
         },
         {
           "name": "prices",
-          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "Price breakdown, a JSON-serialized list of components (e.g. product price, tax, discount, delivery cost, delivery tax, bonus, etc.). Must contain exactly one item for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": true,
           "type_info": {
             "type": "array",
@@ -25269,7 +25791,7 @@
         },
         {
           "name": "max_tip_amount",
-          "description": "*Optional*. The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. The maximum accepted amount for tips in the *smallest units* of the currency (integer, **not** float/double). For example, for a maximum tip of `US$ 1.45` pass `max_tip_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies). Defaults to 0. Not supported for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "integer",
@@ -25336,7 +25858,7 @@
         },
         {
           "name": "need_name",
-          "description": "*Optional*. Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if you require the user's full name to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25344,7 +25866,7 @@
         },
         {
           "name": "need_phone_number",
-          "description": "*Optional*. Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if you require the user's phone number to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25352,7 +25874,7 @@
         },
         {
           "name": "need_email",
-          "description": "*Optional*. Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if you require the user's email address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25360,7 +25882,7 @@
         },
         {
           "name": "need_shipping_address",
-          "description": "*Optional*. Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if you require the user's shipping address to complete the order. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25368,7 +25890,7 @@
         },
         {
           "name": "send_phone_number_to_provider",
-          "description": "*Optional*. Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if the user's phone number should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25376,7 +25898,7 @@
         },
         {
           "name": "send_email_to_provider",
-          "description": "*Optional*. Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if the user's email address should be sent to the provider. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25384,7 +25906,7 @@
         },
         {
           "name": "is_flexible",
-          "description": "*Optional*. Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90).",
+          "description": "*Optional*. Pass *True* if the final price depends on the shipping method. Ignored for payments in [Telegram Stars](https://t.me/BotNews/90).",
           "required": false,
           "type_info": {
             "type": "bool"
@@ -25447,49 +25969,6 @@
       "documentation_link": "https://core.telegram.org/bots/api#choseninlineresult"
     },
     {
-      "name": "SentWebAppMessage",
-      "description": "Describes an inline message sent by a [Web App](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/webapps) on behalf of a user.",
-      "type": "properties",
-      "properties": [
-        {
-          "name": "inline_message_id",
-          "description": "*Optional*. Identifier of the sent inline message. Available only if there is an [inline keyboard](https://core.telegram.org/bots/api#inlinekeyboardmarkup) attached to the message.",
-          "required": false,
-          "type_info": {
-            "type": "string",
-            "enumeration": []
-          }
-        }
-      ],
-      "documentation_link": "https://core.telegram.org/bots/api#sentwebappmessage"
-    },
-    {
-      "name": "PreparedInlineMessage",
-      "description": "Describes an inline message to be sent by a user of a Mini App.",
-      "type": "properties",
-      "properties": [
-        {
-          "name": "id",
-          "description": "Unique identifier of the prepared message",
-          "required": true,
-          "type_info": {
-            "type": "string",
-            "enumeration": []
-          }
-        },
-        {
-          "name": "expiration_date",
-          "description": "Expiration date of the prepared message, in Unix time. Expired prepared messages can no longer be used",
-          "required": true,
-          "type_info": {
-            "type": "integer",
-            "enumeration": []
-          }
-        }
-      ],
-      "documentation_link": "https://core.telegram.org/bots/api#preparedinlinemessage"
-    },
-    {
       "name": "LabeledPrice",
       "description": "This object represents a portion of the price for goods or services.",
       "type": "properties",
@@ -25505,7 +25984,7 @@
         },
         {
           "name": "amount",
-          "description": "Price of the product in the *smallest units* of the [currency](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies) (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
+          "description": "Price of the product in the *smallest units* of the [currency](https://core.telegram.org/bots/payments#supported-currencies) (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -25549,7 +26028,7 @@
         },
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90)",
+          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25558,7 +26037,7 @@
         },
         {
           "name": "total_amount",
-          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
+          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -25575,7 +26054,7 @@
       "properties": [
         {
           "name": "country_code",
-          "description": "Two-letter [ISO 3166-1 alpha-2](https://web.archive.org/web/20260302003837/https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code",
+          "description": "Two-letter [ISO 3166-1 alpha-2](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) country code",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25719,7 +26198,7 @@
       "properties": [
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90)",
+          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25728,7 +26207,7 @@
         },
         {
           "name": "total_amount",
-          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
+          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -25817,7 +26296,7 @@
       "properties": [
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90). Currently, always “XTR”",
+          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90). Currently, always “XTR”",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25827,7 +26306,7 @@
         },
         {
           "name": "total_amount",
-          "description": "Total refunded price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45`, `total_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
+          "description": "Total refunded price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45`, `total_amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -25933,7 +26412,7 @@
         },
         {
           "name": "currency",
-          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://web.archive.org/web/20260302003837/https://t.me/BotNews/90)",
+          "description": "Three-letter ISO 4217 [currency](https://core.telegram.org/bots/payments#supported-currencies) code, or “XTR” for payments in [Telegram Stars](https://t.me/BotNews/90)",
           "required": true,
           "type_info": {
             "type": "string",
@@ -25942,7 +26421,7 @@
         },
         {
           "name": "total_amount",
-          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/web/20260302003837/https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
+          "description": "Total price in the *smallest units* of the currency (integer, **not** float/double). For example, for a price of `US$ 1.45` pass `amount = 145`. See the *exp* parameter in [currencies.json](https://core.telegram.org/bots/payments/currencies.json), it shows the number of digits past the decimal point for each currency (2 for the majority of currencies).",
           "required": true,
           "type_info": {
             "type": "integer",
@@ -26731,7 +27210,7 @@
     },
     {
       "name": "EncryptedCredentials",
-      "description": "Describes data required for decrypting and authenticating [EncryptedPassportElement](https://core.telegram.org/bots/api#encryptedpassportelement). See the [Telegram Passport Documentation](https://core.telegram.org/web/20260302003837/https://core.telegram.org/passport#receiving-information) for a complete description of the data decryption and authentication processes.",
+      "description": "Describes data required for decrypting and authenticating [EncryptedPassportElement](https://core.telegram.org/bots/api#encryptedpassportelement). See the [Telegram Passport Documentation](https://core.telegram.org/passport#receiving-information) for a complete description of the data decryption and authentication processes.",
       "type": "properties",
       "properties": [
         {
@@ -27340,7 +27819,7 @@
         },
         {
           "name": "animation",
-          "description": "*Optional*. Animation that will be displayed in the game message in chats. Upload via [BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather)",
+          "description": "*Optional*. Animation that will be displayed in the game message in chats. Upload via [BotFather](https://t.me/botfather)",
           "required": false,
           "type_info": {
             "type": "reference",
@@ -27352,7 +27831,7 @@
     },
     {
       "name": "CallbackGame",
-      "description": "A placeholder, currently holds no information. Use [BotFather](https://web.archive.org/web/20260302003837/https://t.me/botfather) to set up your game.",
+      "description": "A placeholder, currently holds no information. Use [BotFather](https://t.me/botfather) to set up your game.",
       "type": "unknown",
       "documentation_link": "https://core.telegram.org/bots/api#callbackgame"
     },

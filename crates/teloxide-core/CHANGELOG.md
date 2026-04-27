@@ -9,6 +9,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.6
+  - Add `get_managed_bot_token`, `replace_managed_bot_token`, and `save_prepared_keyboard_button` methods
+  - Add `ManagedBotCreated`, `ManagedBotUpdated`, `PollOptionAdded`, `PollOptionDeleted`,
+    `KeyboardButtonRequestManagedBot`, and `PreparedKeyboardButton` types
+  - Add managed bot and poll fields introduced in Bot API 9.6
+  - Replace `correct_option_id` field with `correct_option_ids` in `Poll` and `sendPoll` [**BC**]
+
 - Support for TBA 9.5
   - Add `set_chat_member_tag` method
   - Add `can_manage_tags` parameter to `promote_chat_member` method

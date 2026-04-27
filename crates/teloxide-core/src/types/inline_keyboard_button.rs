@@ -233,7 +233,8 @@ mod tests {
 
     #[test]
     fn serde_icon_and_style() {
-        let json = r#"{"text":"x","callback_data":"cb","icon_custom_emoji_id":"123","style":"primary"}"#;
+        let json =
+            r#"{"text":"x","callback_data":"cb","icon_custom_emoji_id":"123","style":"primary"}"#;
         let button: InlineKeyboardButton = serde_json::from_str(json).unwrap();
         assert_eq!(button.icon_custom_emoji_id, Some("123".into()));
         assert_eq!(button.style, Some(ButtonStyle::Primary));

@@ -122,6 +122,9 @@ define_message_ext! {
     (filter_chat_background_set, Message::chat_background_set),
     (filter_checklist_tasks_done, Message::checklist_tasks_done),
     (filter_checklist_tasks_added, Message::checklist_tasks_added),
+    (filter_managed_bot_created, Message::managed_bot_created),
+    (filter_poll_option_added, Message::poll_option_added),
+    (filter_poll_option_deleted, Message::poll_option_deleted),
     (filter_direct_message_price_changed, Message::direct_message_price_changed),
     (filter_chat_owner_left, Message::chat_owner_left),
     (filter_chat_owner_changed, Message::chat_owner_changed),
@@ -192,4 +195,5 @@ define_update_ext! {
     (filter_chat_join_request, UpdateKind::ChatJoinRequest, ChatJoinRequest),
     (filter_chat_boost, UpdateKind::ChatBoost, ChatBoost),
     (filter_removed_chat_boost, UpdateKind::RemovedChatBoost, RemovedChatBoost),
+    (filter_managed_bot, UpdateKind::ManagedBot, ManagedBot),
 }
