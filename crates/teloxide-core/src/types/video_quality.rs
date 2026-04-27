@@ -21,7 +21,45 @@ pub struct VideoQuality {
 
     /// Codec that was used to encode the video.
     pub codec: String,
+}
 
-    /// File size of the video in the described quality level in bytes.
-    pub file_size: Option<u64>,
+#[cfg(test)]
+mod tests {
+    use super::VideoQuality;
+    use crate::types::{FileId, FileMeta, FileUniqueId};
+
+    #[test]
+    fn deserialize_file_size_into_file_meta() {
+        let json = r#"{
+            "file_id":"id2",
+            "file_unique_id":"uid2",
+            "file_size":100,
+            "width":1280,
+            "height":720,
+            "codec":"h265"
+        }"#;
+
+        let quality: VideoQuality = serde_json::from_str(json).unwrap();
+
+        assert_eq!(quality.file.size, 100);
+        assert_eq!(quality.codec, "h265");
+    }
+
+    #[test]
+    fn serialize_file_size_only_once() {
+        let quality = VideoQuality {
+            file: FileMeta {
+                id: FileId("id2".into()),
+                unique_id: FileUniqueId("uid2".into()),
+                size: 100,
+            },
+            width: 1280,
+            height: 720,
+            codec: "h265".into(),
+        };
+
+        let json = serde_json::to_string(&quality).unwrap();
+
+        assert_eq!(json.matches("\"file_size\"").count(), 1);
+    }
 }

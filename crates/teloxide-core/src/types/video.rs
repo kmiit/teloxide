@@ -72,5 +72,6 @@ mod tests {
         let video: Video = serde_json::from_str(json).unwrap();
         assert_eq!(video.qualities.as_ref().unwrap().len(), 1);
         assert_eq!(video.qualities.as_ref().unwrap()[0].codec, "h265");
+        assert_eq!(video.qualities.as_ref().unwrap()[0].file.size, 100);
     }
 }
