@@ -42,6 +42,10 @@ pub struct UniqueGift {
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_from_blockchain: bool,
 
+    /// `true`, if the gift was burned.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_burned: bool,
+
     /// Optional colors associated with the gift.
     pub colors: Option<UniqueGiftColors>,
 }
@@ -62,6 +66,19 @@ pub struct UniqueGiftModel {
     /// The number of unique gifts that receive this model for every 1000 gifts
     /// upgraded
     pub rarity_per_mille: u32,
+
+    /// Optional rarity of the model.
+    pub rarity: Option<UniqueGiftModelRarity>,
+}
+
+#[derive(Copy, Clone, Debug, Eq, Hash, PartialEq, Serialize, Deserialize)]
+#[cfg_attr(test, derive(schemars::JsonSchema))]
+#[serde(rename_all = "snake_case")]
+pub enum UniqueGiftModelRarity {
+    Uncommon,
+    Rare,
+    Epic,
+    Legendary,
 }
 
 /// This object describes the symbol shown on the pattern of a unique gift.
@@ -153,6 +170,7 @@ mod tests {
                 name: "name".to_owned(),
                 sticker: sticker.clone(),
                 rarity_per_mille: 123,
+                rarity: Some(UniqueGiftModelRarity::Epic),
             },
             symbol: UniqueGiftSymbol {
                 name: "name".to_owned(),
@@ -172,6 +190,7 @@ mod tests {
             publisher_chat: None,
             is_premium: false,
             is_from_blockchain: false,
+            is_burned: false,
             colors: None,
         };
 
@@ -194,7 +213,8 @@ mod tests {
                     "is_video": false,
                     "needs_repainting": false
                 },
-                "rarity_per_mille": 123
+                "rarity_per_mille": 123,
+                "rarity": "epic"
             },
             "symbol": {
                 "name": "name",
@@ -221,7 +241,10 @@ mod tests {
                     "text_color": 16776960
                 },
                 "rarity_per_mille": 123
-            }
+            },
+            "is_premium": false,
+            "is_from_blockchain": false,
+            "is_burned": false
         }"#;
 
         assert_eq!(serde_json::from_str::<UniqueGift>(unique_gift_json).unwrap(), unique_gift);

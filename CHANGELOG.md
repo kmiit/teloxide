@@ -8,6 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.4
+  - Add `filter_chat_owner_left` and `filter_chat_owner_changed` to the `MessageFilterExt` trait
+
 - Support for TBA 9.3
   - Add `filter_gift_upgrade_sent` to the `MessageFilterExt` trait
   - Replace `last_resale_star_count` with `last_resale_currency`/`last_resale_amount` in `UniqueGiftInfo` [**BC**]

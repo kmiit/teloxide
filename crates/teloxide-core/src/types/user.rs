@@ -37,6 +37,11 @@ pub struct User {
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub has_topics_enabled: bool,
 
+    /// `true`, if users can create topics in direct messages chats and topics
+    /// are shown in the chat list.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub allows_users_to_create_topics: bool,
+
     /// `true`, if this user added the bot to the attachment menu.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub added_to_attachment_menu: bool,
@@ -156,6 +161,7 @@ mod tests {
             language_code: Some(String::from("ru")),
             is_premium: false,
             has_topics_enabled: false,
+            allows_users_to_create_topics: false,
             added_to_attachment_menu: false,
         };
         let actual = serde_json::from_str::<User>(json).unwrap();
@@ -173,6 +179,7 @@ mod tests {
             language_code: None,
             is_premium: false,
             has_topics_enabled: false,
+            allows_users_to_create_topics: false,
             added_to_attachment_menu: false,
         };
 
@@ -185,6 +192,7 @@ mod tests {
             language_code: None,
             is_premium: false,
             has_topics_enabled: false,
+            allows_users_to_create_topics: false,
             added_to_attachment_menu: false,
         };
 

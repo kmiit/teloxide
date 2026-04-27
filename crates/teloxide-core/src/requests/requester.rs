@@ -475,6 +475,21 @@ pub trait Requester {
     /// For Telegram documentation see [`GetUserProfilePhotos`].
     fn get_user_profile_photos(&self, user_id: UserId) -> Self::GetUserProfilePhotos;
 
+    type SetMyProfilePhoto: Request<Payload = SetMyProfilePhoto, Err = Self::Err>;
+
+    /// For Telegram documentation see [`SetMyProfilePhoto`].
+    fn set_my_profile_photo(&self, photo: InputProfilePhoto) -> Self::SetMyProfilePhoto;
+
+    type RemoveMyProfilePhoto: Request<Payload = RemoveMyProfilePhoto, Err = Self::Err>;
+
+    /// For Telegram documentation see [`RemoveMyProfilePhoto`].
+    fn remove_my_profile_photo(&self) -> Self::RemoveMyProfilePhoto;
+
+    type GetUserProfileAudios: Request<Payload = GetUserProfileAudios, Err = Self::Err>;
+
+    /// For Telegram documentation see [`GetUserProfileAudios`].
+    fn get_user_profile_audios(&self, user_id: UserId) -> Self::GetUserProfileAudios;
+
     type SetUserEmojiStatus: Request<Payload = SetUserEmojiStatus, Err = Self::Err>;
 
     /// For Telegram documentation see [`SetUserEmojiStatus`].
@@ -1737,6 +1752,9 @@ macro_rules! forward_all {
             send_chat_action,
             set_message_reaction,
             get_user_profile_photos,
+            set_my_profile_photo,
+            remove_my_profile_photo,
+            get_user_profile_audios,
             set_user_emoji_status,
             get_file,
             kick_chat_member,

@@ -225,6 +225,13 @@ fn test_rust_objects() {
     );
     check_object(
         api_schema.clone(),
+        schema_for!(VideoQuality),
+        "VideoQuality".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
         schema_for!(Video),
         "Video".to_owned(),
         &mut errors,
@@ -689,6 +696,13 @@ fn test_rust_objects() {
         api_schema.clone(),
         schema_for!(UserProfilePhotos),
         "UserProfilePhotos".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(UserProfileAudios),
+        "UserProfileAudios".to_owned(),
         &mut errors,
         &exceptions,
     );
@@ -1200,6 +1214,20 @@ fn test_rust_objects() {
         api_schema.clone(),
         schema_for!(ChatBoostRemoved),
         "ChatBoostRemoved".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(ChatOwnerLeft),
+        "ChatOwnerLeft".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(ChatOwnerChanged),
+        "ChatOwnerChanged".to_owned(),
         &mut errors,
         &exceptions,
     );

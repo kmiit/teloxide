@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.4
+  - Add `set_my_profile_photo`, `remove_my_profile_photo`, and `get_user_profile_audios` methods
+  - Add `UserProfileAudios`, `VideoQuality`, `ChatOwnerLeft`, and `ChatOwnerChanged` types
+  - Add `allows_users_to_create_topics`, `icon_custom_emoji_id`, `style`, `qualities`,
+    `first_profile_audio`, `rarity`, and `is_burned` fields
+
 - Support for TBA 9.3
   - Add `send_message_draft`, `get_user_gifts`, `get_chat_gifts`, and `repost_story` methods
   - Add `GiftBackground`, `UniqueGiftColors`, and `UserRating` types
