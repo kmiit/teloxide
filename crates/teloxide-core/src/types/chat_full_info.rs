@@ -842,7 +842,7 @@ mod tests {
                 file: crate::types::FileMeta {
                     id: "audio-id".into(),
                     unique_id: "audio-uniq".into(),
-                    size: u32::MAX.into(),
+                    size: u32::MAX,
                 },
                 duration: crate::types::Seconds::from_seconds(1),
                 performer: None,
