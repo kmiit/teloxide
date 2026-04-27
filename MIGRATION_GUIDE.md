@@ -3,6 +3,26 @@ Note that the list of required changes is not fully exhaustive and it may lack s
 
 ## unreleased
 
+### TBA 9.3
+
+`last_resale_star_count` was replaced with `last_resale_currency` and `last_resale_amount` in `UniqueGiftInfo`:
+
+```diff
+-let count: Option<u32> = unique_gift_info.last_resale_star_count;
++let currency: Option<String> = unique_gift_info.last_resale_currency;
++let amount: Option<u64> = unique_gift_info.last_resale_amount;
+```
+
+`exclude_limited` was replaced with `exclude_limited_upgradable` and `exclude_limited_non_upgradable` in `getBusinessAccountGifts`:
+
+```diff
+-bot.get_business_account_gifts(business_connection_id).exclude_limited(true).await?;
++bot.get_business_account_gifts(business_connection_id)
++    .exclude_limited_upgradable(true)
++    .exclude_limited_non_upgradable(true)
++    .await?;
+```
+
 ## 0.16 -> 0.17
 
 ### teloxide

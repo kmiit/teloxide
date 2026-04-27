@@ -33,6 +33,10 @@ pub struct User {
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_premium: bool,
 
+    /// `true`, if forum topic mode is enabled for this user in private chats.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub has_topics_enabled: bool,
+
     /// `true`, if this user added the bot to the attachment menu.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub added_to_attachment_menu: bool,
@@ -151,6 +155,7 @@ mod tests {
             username: Some("Username".to_string()),
             language_code: Some(String::from("ru")),
             is_premium: false,
+            has_topics_enabled: false,
             added_to_attachment_menu: false,
         };
         let actual = serde_json::from_str::<User>(json).unwrap();
@@ -167,6 +172,7 @@ mod tests {
             username: Some("aaaaaaaaaaaaaaaa".to_owned()),
             language_code: None,
             is_premium: false,
+            has_topics_enabled: false,
             added_to_attachment_menu: false,
         };
 
@@ -178,6 +184,7 @@ mod tests {
             username: None,
             language_code: None,
             is_premium: false,
+            has_topics_enabled: false,
             added_to_attachment_menu: false,
         };
 

@@ -8,9 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Support for TBA 9.2 ([#1403](https://github.com/teloxide/teloxide/pull/1403))
-  - Add `filter_suggested_post_approved`, `filter_suggested_post_approval_failed`, `filter_suggested_post_declined`, `filter_suggested_post_paid`, `filter_suggested_post_refunded` filters to the `MessageFilterExt` trait
-  - `ChatFullInfoPublicKind::Supergroup` is now of type `Box<ChatFullInfoPublicSupergroup>` instead of `ChatFullInfoPublicSupergroup` [**BC**]
+- Support for TBA 9.3
+  - Add `filter_gift_upgrade_sent` to the `MessageFilterExt` trait
+  - Replace `last_resale_star_count` with `last_resale_currency`/`last_resale_amount` in `UniqueGiftInfo` [**BC**]
+  - Replace `exclude_limited` with `exclude_limited_upgradable`/`exclude_limited_non_upgradable` in `getBusinessAccountGifts` [**BC**]
 
 ### Fixed
 

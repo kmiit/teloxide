@@ -46,6 +46,14 @@ pub struct GiftInfo {
     /// otherwise, everyone will be able to see them
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub is_private: bool,
+
+    /// `true`, if the gift upgrade is paid separately from the gift itself.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub is_upgrade_separate: bool,
+
+    /// Number of the upgraded unique gift if the gift has already been
+    /// upgraded.
+    pub unique_gift_number: Option<u64>,
 }
 
 #[cfg(test)]

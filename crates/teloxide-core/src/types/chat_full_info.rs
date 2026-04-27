@@ -4,7 +4,8 @@ use serde::{Deserialize, Serialize};
 
 use crate::types::{
     AcceptedGiftTypes, Birthdate, BusinessIntro, BusinessLocation, BusinessOpeningHours, Chat,
-    ChatId, ChatLocation, ChatPermissions, ChatPhoto, Message, ReactionType, Seconds, User,
+    ChatId, ChatLocation, ChatPermissions, ChatPhoto, Message, ReactionType, Seconds,
+    UniqueGiftColors, User, UserRating,
 };
 
 /// Custom emoji identifier.
@@ -60,6 +61,9 @@ pub struct ChatFullInfo {
     /// corresponding user for private chats
     pub accepted_gift_types: AcceptedGiftTypes,
 
+    /// Rating of the user in a private chat.
+    pub rating: Option<UserRating>,
+
     /// Identifier of the accent color for the chat name and backgrounds of the
     /// chat photo, reply header, and link preview. See [accent colors] for more
     /// details.
@@ -86,6 +90,9 @@ pub struct ChatFullInfo {
     /// chat.
     pub emoji_status_custom_emoji_id: Option<CustomEmojiId>,
 
+    /// Colors of the currently owned unique gift in a private chat.
+    pub unique_gift_colors: Option<UniqueGiftColors>,
+
     /// Expiration date of the emoji status of the chat or the other party in a
     /// private chat, in Unix time, if any
     #[serde(default, with = "crate::types::serde_opt_date_from_unix_timestamp")]
@@ -96,6 +103,9 @@ pub struct ChatFullInfo {
     /// only to chat administrators.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub has_visible_history: bool,
+
+    /// The price of sending paid messages in the chat, in Telegram Stars.
+    pub paid_message_star_count: Option<u32>,
 
     /// The maximum number of reactions that can be set on a message in the
     /// chat
@@ -745,14 +755,18 @@ mod tests {
                 limited_gifts: true,
                 unique_gifts: true,
                 premium_subscription: true,
+                gifts_from_channels: false,
             },
+            rating: None,
             accent_color_id: 0,
             background_custom_emoji_id: None,
             profile_accent_color_id: None,
             profile_background_custom_emoji_id: None,
             emoji_status_custom_emoji_id: None,
+            unique_gift_colors: None,
             emoji_status_expiration_date: DateTime::from_timestamp(1720708004, 0),
             has_visible_history: false,
+            paid_message_star_count: None,
             max_reaction_count: 0,
         };
         let actual = from_str(
@@ -772,7 +786,8 @@ mod tests {
                     "unlimited_gifts": true,
                     "limited_gifts": true,
                     "unique_gifts": true,
-                    "premium_subscription": true
+                    "premium_subscription": true,
+                    "gifts_from_channels": false
                 }
             }"#,
         )
@@ -807,14 +822,18 @@ mod tests {
                 limited_gifts: true,
                 unique_gifts: true,
                 premium_subscription: true,
+                gifts_from_channels: false,
             },
+            rating: None,
             accent_color_id: 0,
             background_custom_emoji_id: None,
             profile_accent_color_id: None,
             profile_background_custom_emoji_id: None,
             emoji_status_custom_emoji_id: None,
+            unique_gift_colors: None,
             emoji_status_expiration_date: DateTime::from_timestamp(1720708004, 0),
             has_visible_history: false,
+            paid_message_star_count: None,
             max_reaction_count: 0,
         };
         eprintln!("{}", to_string(&chat).unwrap());
@@ -832,7 +851,8 @@ mod tests {
                         "unlimited_gifts": true,
                         "limited_gifts": true,
                         "unique_gifts": true,
-                        "premium_subscription": true
+                        "premium_subscription": true,
+                        "gifts_from_channels": false
                     }
                 }"#
             )
@@ -867,14 +887,18 @@ mod tests {
                 limited_gifts: true,
                 unique_gifts: true,
                 premium_subscription: true,
+                gifts_from_channels: false,
             },
+            rating: None,
             accent_color_id: 0,
             background_custom_emoji_id: None,
             profile_accent_color_id: None,
             profile_background_custom_emoji_id: None,
             emoji_status_custom_emoji_id: None,
+            unique_gift_colors: None,
             emoji_status_expiration_date: None,
             has_visible_history: false,
+            paid_message_star_count: None,
             max_reaction_count: 0,
         };
 

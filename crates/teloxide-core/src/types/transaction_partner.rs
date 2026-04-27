@@ -253,6 +253,7 @@ mod tests {
                 username: Some(String::from("laster_alex")),
                 language_code: Some(String::from("en")),
                 is_premium: false,
+                has_topics_enabled: false,
                 added_to_attachment_menu: false,
             },
             kind: TransactionPartnerUserKind::PremiumPurchase(

@@ -64,11 +64,13 @@ where
     B::SendSticker: Clone + Send + Sync + 'static,
     B::SendInvoice: Clone + Send + Sync + 'static,
     B::SendGame: Clone + Send + Sync + 'static,
+    B::SendMessageDraft: Clone + Send + Sync + 'static,
 {
     type Err = B::Err;
 
     requester_forward! {
         send_message,
+        send_message_draft,
         forward_message,
         forward_messages,
         copy_message,
@@ -221,12 +223,15 @@ where
         get_business_account_star_balance,
         transfer_business_account_stars,
         get_business_account_gifts,
+        get_user_gifts,
+        get_chat_gifts,
         convert_gift_to_stars,
         upgrade_gift,
         transfer_gift,
         post_story,
         edit_story,
         delete_story,
+        repost_story,
         answer_shipping_query,
         create_invoice_link,
         answer_pre_checkout_query,
