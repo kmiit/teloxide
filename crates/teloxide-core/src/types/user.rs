@@ -42,6 +42,10 @@ pub struct User {
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub allows_users_to_create_topics: bool,
 
+    /// `true`, if other bots can be created to be controlled by this bot.
+    #[serde(default, skip_serializing_if = "std::ops::Not::not")]
+    pub can_manage_bots: bool,
+
     /// `true`, if this user added the bot to the attachment menu.
     #[serde(default, skip_serializing_if = "std::ops::Not::not")]
     pub added_to_attachment_menu: bool,
@@ -162,6 +166,7 @@ mod tests {
             is_premium: false,
             has_topics_enabled: false,
             allows_users_to_create_topics: false,
+            can_manage_bots: false,
             added_to_attachment_menu: false,
         };
         let actual = serde_json::from_str::<User>(json).unwrap();
@@ -180,6 +185,7 @@ mod tests {
             is_premium: false,
             has_topics_enabled: false,
             allows_users_to_create_topics: false,
+            can_manage_bots: false,
             added_to_attachment_menu: false,
         };
 
@@ -193,6 +199,7 @@ mod tests {
             is_premium: false,
             has_topics_enabled: false,
             allows_users_to_create_topics: false,
+            can_manage_bots: false,
             added_to_attachment_menu: false,
         };
 

@@ -9,6 +9,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
+- Support for TBA 9.6
+  - Add `get_managed_bot_token`, `replace_managed_bot_token`, and `save_prepared_keyboard_button` methods
+  - Add `ManagedBotCreated`, `ManagedBotUpdated`, `PollOptionAdded`, `PollOptionDeleted`,
+    `KeyboardButtonRequestManagedBot`, and `PreparedKeyboardButton` types
+  - Add managed bot and poll fields introduced in Bot API 9.6
+
 - Support for TBA 9.5
   - Add `set_my_profile_photo`, `remove_my_profile_photo`, and `get_user_profile_audios` methods
   - Add `UserProfileAudios`, `VideoQuality`, `ChatOwnerLeft`, and `ChatOwnerChanged` types

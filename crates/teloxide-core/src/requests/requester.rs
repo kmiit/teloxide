@@ -934,6 +934,16 @@ pub trait Requester {
         business_connection_id: BusinessConnectionId,
     ) -> Self::GetBusinessConnection;
 
+    type GetManagedBotToken: Request<Payload = GetManagedBotToken, Err = Self::Err>;
+
+    /// For Telegram documentation see [`GetManagedBotToken`].
+    fn get_managed_bot_token(&self, user_id: UserId) -> Self::GetManagedBotToken;
+
+    type ReplaceManagedBotToken: Request<Payload = ReplaceManagedBotToken, Err = Self::Err>;
+
+    /// For Telegram documentation see [`ReplaceManagedBotToken`].
+    fn replace_managed_bot_token(&self, user_id: UserId) -> Self::ReplaceManagedBotToken;
+
     type GetMyCommands: Request<Payload = GetMyCommands, Err = Self::Err>;
 
     /// For Telegram documentation see [`GetMyCommands`].
@@ -1030,6 +1040,15 @@ pub trait Requester {
         user_id: UserId,
         result: InlineQueryResult,
     ) -> Self::SavePreparedInlineMessage;
+
+    type SavePreparedKeyboardButton: Request<Payload = SavePreparedKeyboardButton, Err = Self::Err>;
+
+    /// For Telegram documentation see [`SavePreparedKeyboardButton`].
+    fn save_prepared_keyboard_button(
+        &self,
+        user_id: UserId,
+        button: KeyboardButton,
+    ) -> Self::SavePreparedKeyboardButton;
 
     type EditMessageText: Request<Payload = EditMessageText, Err = Self::Err>;
 
@@ -1812,6 +1831,8 @@ macro_rules! forward_all {
             get_user_chat_boosts,
             set_my_commands,
             get_business_connection,
+        get_managed_bot_token,
+        replace_managed_bot_token,
             get_my_commands,
             set_my_name,
             get_my_name,
@@ -1827,6 +1848,7 @@ macro_rules! forward_all {
             answer_inline_query,
             answer_web_app_query,
             save_prepared_inline_message,
+        save_prepared_keyboard_button,
             edit_message_text,
             edit_message_text_inline,
             edit_message_caption,

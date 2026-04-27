@@ -274,6 +274,8 @@ where
         get_user_chat_boosts,
         set_my_commands,
         get_business_connection,
+        get_managed_bot_token,
+        replace_managed_bot_token,
         get_my_commands,
         set_my_name,
         get_my_name,
@@ -286,6 +288,7 @@ where
         set_my_default_administrator_rights,
         get_my_default_administrator_rights,
         delete_my_commands,
+        save_prepared_keyboard_button,
         edit_message_reply_markup,
         edit_message_reply_markup_inline,
         stop_poll,
@@ -406,7 +409,7 @@ impl_visit_parse_modes! {
     CopyMessage => [parse_mode],
     PostStory => [parse_mode],
     EditStory => [parse_mode],
-    SendPoll => [explanation_parse_mode],
+    SendPoll => [explanation_parse_mode, description_parse_mode],
 }
 
 impl VisitParseModes for AnswerInlineQuery {

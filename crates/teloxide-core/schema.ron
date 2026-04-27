@@ -40,7 +40,7 @@
 //! [github]: https://github.com/WaffleLapkin/tg-methods-schema
 
 Schema(
-    api_version: ApiVersion(ver: "9.5", date: "March 1, 2026"),
+    api_version: ApiVersion(ver: "9.6", date: "April 3, 2026"),
     methods: [
         Method(
             names: ("getUpdates", "GetUpdates", "get_updates"),
@@ -2295,7 +2295,7 @@ Schema(
                 Param(
                     name: "options",
                     ty: ArrayOf(RawTy("InputPollOption")),
-                    descr: Doc(md: "A JSON-serialized list of 2-10 answer options"),
+                    descr: Doc(md: "A JSON-serialized list of 2-12 answer options"),
                 ),
                 Param(
                     name: "is_anonymous",
@@ -2310,12 +2310,32 @@ Schema(
                 Param(
                     name: "allows_multiple_answers",
                     ty: Option(bool),
-                    descr: Doc(md: "True, if the poll allows multiple answers, ignored for polls in quiz mode, defaults to False")
+                    descr: Doc(md: "Pass _True_, if the poll allows multiple answers, defaults to _False_")
                 ),
                 Param(
-                    name: "correct_option_id",
-                    ty: Option(u8),
-                    descr: Doc(md: "0-based identifier of the correct answer option, required for polls in quiz mode")
+                    name: "allows_revoting",
+                    ty: Option(bool),
+                    descr: Doc(md: "Pass _True_, if the poll allows to change chosen answer options, defaults to _False_ for quizzes and to _True_ for regular polls")
+                ),
+                Param(
+                    name: "shuffle_options",
+                    ty: Option(bool),
+                    descr: Doc(md: "Pass _True_, if the poll options must be shown in random order")
+                ),
+                Param(
+                    name: "allow_adding_options",
+                    ty: Option(bool),
+                    descr: Doc(md: "Pass _True_, if answer options can be added to the poll after creation; not supported for anonymous polls and quizzes")
+                ),
+                Param(
+                    name: "hide_results_until_closes",
+                    ty: Option(bool),
+                    descr: Doc(md: "Pass _True_, if poll results must be shown only after the poll closes")
+                ),
+                Param(
+                    name: "correct_option_ids",
+                    ty: Option(ArrayOf(u8)),
+                    descr: Doc(md: "A JSON-serialized list of monotonically increasing 0-based identifiers of the correct answer options, required for polls in quiz mode")
                 ),
                 Param(
                     name: "explanation",
@@ -2338,17 +2358,35 @@ Schema(
                 Param(
                     name: "open_period",
                     ty: Option(u16),
-                    descr: Doc(md: "Amount of time in seconds the poll will be active after creation, 5-600. Can't be used together with close_date.")
+                    descr: Doc(md: "Amount of time in seconds the poll will be active after creation, 5-2628000. Can't be used together with _close\\_date_.")
                 ),
                 Param(
                     name: "close_date",
                     ty: Option(u64),
-                    descr: Doc(md: "Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 600 seconds in the future. Can't be used together with open_period.")
+                    descr: Doc(md: "Point in time (Unix timestamp) when the poll will be automatically closed. Must be at least 5 and no more than 2628000 seconds in the future. Can't be used together with _open\\_period_.")
                 ),
                 Param(
                     name: "is_closed",
                     ty: Option(bool),
                     descr: Doc(md: "Pass True, if the poll needs to be immediately closed. This can be useful for poll preview.")
+                ),
+                Param(
+                    name: "description",
+                    ty: Option(String),
+                    descr: Doc(md: "Description of the poll to be sent, 0-1024 characters after entities parsing")
+                ),
+                Param(
+                    name: "description_parse_mode",
+                    ty: Option(RawTy("ParseMode")),
+                    descr: Doc(
+                        md: "Mode for parsing entities in the poll description. See [formatting options] for more details.",
+                        md_links: {"formatting options": "https://core.telegram.org/bots/api#formatting-options"}
+                    )
+                ),
+                Param(
+                    name: "description_entities",
+                    ty: Option(ArrayOf(RawTy("MessageEntity"))),
+                    descr: Doc(md: "A JSON-serialized list of special entities that appear in the poll description, which can be specified instead of _description\\_parse\\_mode_"),
                 ),
                 Param(
                     name: "disable_notification",
@@ -3900,6 +3938,34 @@ Schema(
             ],
         ),
         Method(
+            names: ("getManagedBotToken", "GetManagedBotToken", "get_managed_bot_token"),
+            return_ty: String,
+            doc: Doc(md: "Use this method to get the token of a managed bot. Returns the token as _String_ on success."),
+            tg_doc: "https://core.telegram.org/bots/api#getmanagedbottoken",
+            tg_category: "Available methods",
+            params: [
+                Param(
+                    name: "user_id",
+                    ty: RawTy("UserId"),
+                    descr: Doc(md: "User identifier of the managed bot whose token will be returned"),
+                ),
+            ],
+        ),
+        Method(
+            names: ("replaceManagedBotToken", "ReplaceManagedBotToken", "replace_managed_bot_token"),
+            return_ty: String,
+            doc: Doc(md: "Use this method to revoke the current token of a managed bot and generate a new one. Returns the new token as _String_ on success."),
+            tg_doc: "https://core.telegram.org/bots/api#replacemanagedbottoken",
+            tg_category: "Available methods",
+            params: [
+                Param(
+                    name: "user_id",
+                    ty: RawTy("UserId"),
+                    descr: Doc(md: "User identifier of the managed bot whose token will be replaced"),
+                ),
+            ],
+        ),
+        Method(
             names: ("getMyCommands", "GetMyCommands", "get_my_commands"),
             return_ty: ArrayOf(RawTy("BotCommand")),
             doc: Doc(
@@ -4217,6 +4283,28 @@ Schema(
                     name: "allow_channel_chats",
                     ty: Option(bool),
                     descr: Doc(md: "Pass `true`, if the message can be sent to channel chats"),
+                ),
+            ]
+        ),
+        Method(
+            names: ("savePreparedKeyboardButton", "SavePreparedKeyboardButton", "save_prepared_keyboard_button"),
+            return_ty: RawTy("PreparedKeyboardButton"),
+            doc: Doc(
+                md: "Stores a keyboard button that can be used by a user within a Mini App. Returns a [PreparedKeyboardButton] object.",
+                md_links: {"PreparedKeyboardButton": "https://core.telegram.org/bots/api#preparedkeyboardbutton"},
+            ),
+            tg_doc: "https://core.telegram.org/bots/api#savepreparedkeyboardbutton",
+            tg_category: "Inline Mode",
+            params: [
+                Param(
+                    name: "user_id",
+                    ty: RawTy("UserId"),
+                    descr: Doc(md: "Unique identifier of the target user that can use the button"),
+                ),
+                Param(
+                    name: "button",
+                    ty: RawTy("KeyboardButton"),
+                    descr: Doc(md: "A JSON-serialized object describing the button to be saved. The button must be of the type _request\\_users_, _request\\_chat_, or _request\\_managed\\_bot_")
                 ),
             ]
         ),

@@ -407,6 +407,34 @@ fn test_rust_objects() {
     );
     check_object(
         api_schema.clone(),
+        schema_for!(ManagedBotCreated),
+        "ManagedBotCreated".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(ManagedBotUpdated),
+        "ManagedBotUpdated".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(PollOptionAdded),
+        "PollOptionAdded".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(PollOptionDeleted),
+        "PollOptionDeleted".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
         schema_for!(ChatBoostAdded),
         "ChatBoostAdded".to_owned(),
         &mut errors,
@@ -745,6 +773,13 @@ fn test_rust_objects() {
         api_schema.clone(),
         schema_for!(KeyboardButtonRequestChat),
         "KeyboardButtonRequestChat".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(KeyboardButtonRequestManagedBot),
+        "KeyboardButtonRequestManagedBot".to_owned(),
         &mut errors,
         &exceptions,
     );
@@ -1261,6 +1296,27 @@ fn test_rust_objects() {
     );
     check_object(
         api_schema.clone(),
+        schema_for!(SentWebAppMessage),
+        "SentWebAppMessage".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(PreparedInlineMessage),
+        "PreparedInlineMessage".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
+        schema_for!(PreparedKeyboardButton),
+        "PreparedKeyboardButton".to_owned(),
+        &mut errors,
+        &exceptions,
+    );
+    check_object(
+        api_schema.clone(),
         schema_for!(ResponseParameters),
         "ResponseParameters".to_owned(),
         &mut errors,
@@ -1613,20 +1669,6 @@ fn test_rust_objects() {
         api_schema.clone(),
         schema_for!(ChosenInlineResult),
         "ChosenInlineResult".to_owned(),
-        &mut errors,
-        &exceptions,
-    );
-    check_object(
-        api_schema.clone(),
-        schema_for!(SentWebAppMessage),
-        "SentWebAppMessage".to_owned(),
-        &mut errors,
-        &exceptions,
-    );
-    check_object(
-        api_schema.clone(),
-        schema_for!(PreparedInlineMessage),
-        "PreparedInlineMessage".to_owned(),
         &mut errors,
         &exceptions,
     );
